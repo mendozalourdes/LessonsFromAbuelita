@@ -1,0 +1,10 @@
+.app-header {
+    border: 5px yellow solid;
+    background-color: rgb(245, 28, 155) ;
+    padding: 4vh;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+}
