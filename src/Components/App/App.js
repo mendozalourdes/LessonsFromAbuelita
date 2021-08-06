@@ -1,7 +1,7 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import Home from '../Home/Home';
-import WordsoftheDay from '../WordoftheDay/WordoftheDay';
+import WordsoftheDay from '../WordsoftheDay/WordoftheDay';
 
 
 function App() {

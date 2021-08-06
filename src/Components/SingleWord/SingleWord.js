@@ -1,6 +1,6 @@
 import React from "react";
 import "./SingleWord.css";
-import WordoftheDay from "../WordoftheDay/WordoftheDay";
+import WordoftheDay from "../WordsoftheDay/WordoftheDay";
 
 // data.body.Word
 //data.body.DefinitionMD
@@ -17,14 +17,6 @@ const SingleWord = ({word, definition, image}) => {
 //   const {word, id} = props;
 
     return (
-        // <div className="single-word-container">
-        //     <h1 className="random-word">
-        //         {word}
-        //     </h1>
-        //     <p className="word-definition"> {definition} </p>
-        //     <img className="image-word" alt="image-of-word" src={image}/>
-
-        // </div>
 
  <section className="homepage-view">
 <header className="app-header">
