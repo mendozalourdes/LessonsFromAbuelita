@@ -12,7 +12,7 @@ function App() {
          <WordsoftheDay/>
       </header>
     </div>
-  );
+  )
 }
 
 export default App;

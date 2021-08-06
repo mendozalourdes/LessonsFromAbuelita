@@ -2,3 +2,22 @@
     height: 40vh;
     width: 30vw;
 }
+
+.single-word-container {
+    background-color: orange;
+}
+
+
+.go-to-form-view-btn {
+    height: 5vh;
+    width: 9vw;
+    border: none;
+    background-color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.go-to-form-view-btn:hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+}

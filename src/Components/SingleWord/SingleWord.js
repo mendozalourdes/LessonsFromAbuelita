@@ -40,7 +40,7 @@ const SingleWord = ({word, definition, image}) => {
                 {word}
             </h1>
             <p className="word-definition"> {definition} </p>
-
+            <button className="go-to-form-view-btn">Let's Practice!</button>
         </section>
 </section> 
 
