@@ -10,9 +10,10 @@ import WordoftheDay from "../WordoftheDay/WordoftheDay";
 
 
 
-const SingleWord = ({word, definition}) => {
+const SingleWord = ({word, definition, image}) => {
     console.log("wordSTATE?", word)
     console.log("defffff", definition)
+    console.log("imageee", image)
 //   const {word, id} = props;
 
     return (
@@ -20,8 +21,8 @@ const SingleWord = ({word, definition}) => {
             <h1 className="random-word">
                 {word}
             </h1>
-            <p> {definition} </p>
-
+            <p className="word-definition"> {definition} </p>
+            <img className="image-word" alt="image-of-word" src={image}/>
 
         </div>
 

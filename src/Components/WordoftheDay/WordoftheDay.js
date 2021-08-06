@@ -12,7 +12,8 @@ class WordsoftheDay extends React.Component {
             word: [],
             id: Date.now(),
             error: "",
-            definition: []
+            definition: [],
+            image: []
 
         };
     }
@@ -25,9 +26,11 @@ class WordsoftheDay extends React.Component {
             } else {
                 this.setState({ word: response.body.Word})
                 this.setState({ definition: response.body.DefinitionMD})
+                this.setState({ image: response.body.urls.image})
                 console.log(this.state)
                 console.log("wordddddd", this.state.word)
                 console.log("definition!!", this.state.definition)
+                console.log("imageeState", this.state.image)
             }
         })
         .catch((err) => this.setState({ error: err.message }));
@@ -36,7 +39,7 @@ class WordsoftheDay extends React.Component {
     render() {
         return (
             <main>
-               {this.state.word && this.state.definition && <SingleWord word={this.state.word} definition={this.state.definition} />}
+               {this.state.word && this.state.definition && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />}
             </main>
         )
 
