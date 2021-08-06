@@ -12,8 +12,8 @@ let apiCalls = {
         }
       },
     
-    fetchAPIData(randomWord) {
-        return fetch(`${baseURL}${randomWord}`)
+    fetchAPIData(endpoint) {
+        return fetch(`${baseURL}${endpoint}`)
         .then(this.checkForErr)
       }
 }
