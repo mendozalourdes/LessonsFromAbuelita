@@ -17,35 +17,35 @@ const SingleWord = ({word, definition, image}) => {
 //   const {word, id} = props;
 
     return (
-        <div className="single-word-container">
+        // <div className="single-word-container">
+        //     <h1 className="random-word">
+        //         {word}
+        //     </h1>
+        //     <p className="word-definition"> {definition} </p>
+        //     <img className="image-word" alt="image-of-word" src={image}/>
+
+        // </div>
+
+ <section className="homepage-view">
+<header className="app-header">
+    <h1 className="app-title">Lessons from Abuelita </h1>
+    <div className="links">
+    <p className="saved-link">Saved Words & Sentences</p>
+    <p className="origin-story-link">About Us</p>
+    </div>
+</header>
+        <section className="single-word-container">
+            <img className="image-word" alt="image-of-word" src={image}/>
             <h1 className="random-word">
                 {word}
             </h1>
             <p className="word-definition"> {definition} </p>
-            <img className="image-word" alt="image-of-word" src={image}/>
 
-        </div>
+        </section>
+</section> 
 
     )
   
-//     const  = props.word.map((word) => {
-//     return (
-//       <Movie
-//         key={movie.id}
-//         id={movie.id}
-//         image={movie.poster_path}
-//         showMovieDetails={props.showMovieDetails}
-//         backdrop={props.backdrop_path}
-//         title={movie.title}
-//         cleanInputs={props.cleanInputs}
-//       />
-//     );
-//   });
-//   return (
-//     <div>
-//       <section className="movie-container">{movieComponents}</section>
-//     </div>
-//   );
 };
 
 export default SingleWord;
