@@ -1,10 +1,31 @@
+h2{
+ margin: 0 0 0 0;   
+}
+
 .app-header {
-    border: 5px yellow solid;
+    border: 5px yellow dashed;
     background-color: rgb(245, 28, 155) ;
-    padding: 4vh;
+    padding: 1vh;
+    font-size: 3vh;
 }
 
 .links{
     display: flex;
     justify-content: space-between;
+}
+
+.main-container{
+    background-color: orange;
+    height: 105vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-section{
+    padding: 0;
+    background-color: rgb(81, 228, 88);
+    height: 50vh;
+    width: 50vw;
+    margin-top: 10%;
+    
 }
