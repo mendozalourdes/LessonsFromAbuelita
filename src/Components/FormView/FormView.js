@@ -5,7 +5,7 @@ import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
 
 class FormView extends React.Component {
-  constructor({ props, handler }) {
+  constructor({ props }) {
     super({ props });
     this.state = {
       word: props.word,
