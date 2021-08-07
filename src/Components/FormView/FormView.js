@@ -4,12 +4,9 @@ import "./FormView.css";
 import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
 
-
 class FormView extends React.Component {
-  constructor({props, handler}) {
-    console.log("propssss", props);
-    console.log("handler", handler)
-    super({props});
+  constructor({ props }) {
+    super({ props });
     this.state = {
       word: props.word,
       sentence: props.sentence,
@@ -19,7 +16,6 @@ class FormView extends React.Component {
       error: "",
       image: props.image,
     };
-    console.log("FormState", this.state)
   }
 
   handleChange = (event) => {
@@ -29,31 +25,34 @@ class FormView extends React.Component {
   submitSentence = (event) => {
     event.preventDefault();
     const newSentence = this.state.sentence;
-    // this.setState({
-    //   savedSentences: [...this.state.savedSentences, newSentence]
-    // });
     this.setState({
-      savedSentences: [...this.state.savedSentences, newSentence]
-    })
-    {this.props.handler(newSentence)}
-    console.log("FormState2", this.state)
+      savedSentences: [...this.state.savedSentences, newSentence],
+    });
+    {
+      this.props.handler(newSentence);
+    }
   };
 
   render() {
     return (
       <section className="homepage-view">
         <header className="app-header">
-        <NavLink to={"/"}>
+          <NavLink to={"/"}>
             <button className="title-button">
-                <h1 className="app-title">Lessons from Abuelita </h1>
+              <h1 className="app-title">Lessons from Abuelita </h1>
             </button>
-        </NavLink>
-        <div className="links">
-        <NavLink to={"/form"}>
-            <button className="saved-button">
-              <p className="saved-link">Saved Words & Sentences</p>
-            </button>
-        </NavLink>
+          </NavLink>
+          <div className="links">
+            <NavLink to={"/form"}>
+              <button className="saved-button">
+                <p className="saved-link">Saved Words & Sentences</p>
+              </button>
+            </NavLink>
+            <NavLink to={"/word"}>
+              <button className="word-button">
+                <p className="word-link">Show Me A Word</p>
+              </button>
+            </NavLink>
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
@@ -65,8 +64,8 @@ class FormView extends React.Component {
           <section className="both-sections">
             <main className="main-form-container">
               <h2 className="instructions">
-                  Write your practice sentence here, and send it over to your
-                  Abuelita by clicking on the button! 
+                Write your practice sentence here, and send it over to your
+                Abuelita by clicking on the button!
               </h2>
               <textarea
                 id="sentenceInput"
@@ -92,11 +91,10 @@ class FormView extends React.Component {
                 <h3>Practice Sentences</h3>
                 <h2 className="each-sentence">{this.state.savedSentences}</h2>
               </div>
-              {/* <div className="board-border-bottom"/> */}
             </div>
           </section>
         </section>
-       </section> 
+      </section>
     );
   }
 }

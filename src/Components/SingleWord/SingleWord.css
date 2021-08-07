@@ -1,44 +1,43 @@
 .image-word {
-    height: 40vh;
-    width: 30vw;
+  height: 40vh;
+  width: 30vw;
 }
 
 .single-word-container {
-    background-color: orange;
+  background-color: orange;
 }
 
-
-.go-to-form-view-btn {
-    height: 5vh;
-    width: 9vw;
-    border: none;
-    background-color: yellow;
-    font-family: 'Courier New', Courier, monospace;
+.word-button {
+  height: 5vh;
+  width: 9vw;
+  border: none;
+  background-color: yellow;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.go-to-form-view-btn:hover {
-    transition: transform 125ms;
-    transform: translateY(-10px);
-    cursor: pointer;
+.word-button:hover {
+  transition: transform 125ms;
+  transform: translateY(-10px);
+  cursor: pointer;
 }
 
 .app-header {
-    border: 5px yellow dashed;
-    background-color: rgb(245, 28, 155) ;
-    font-size: 3vh;
-    width: 104vw;
+  border: 5px yellow dashed;
+  background-color: rgb(245, 28, 155);
+  font-size: 3vh;
+  width: 104vw;
 }
 
-.app-title{
-    font-size: 8vh;
-    font-family: 'Courier New', Courier, monospace;
+.app-title {
+  font-size: 8vh;
+  font-family: "Courier New", Courier, monospace;
 }
 
-h2{
-    margin: 0 0 0 0;   
-   }
-   
+h2 {
+  margin: 0 0 0 0;
+}
+
 .title-button {
-    background-color: rgb(245, 28, 155) ;
-    border: none;
+  background-color: rgb(245, 28, 155);
+  border: none;
 }
