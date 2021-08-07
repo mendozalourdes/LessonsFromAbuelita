@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import "./FormView.css"; 
+import WordsoftheDay from '../WordsoftheDay/WordoftheDay';
 
 class FormView extends React.Component {
     constructor(props) {
-        console.log("props", props)
-        super();
+        console.log("propssss", props)
+        super(props);
         this.state = {
             savedWord: [],
             sentence: [],
@@ -51,9 +52,12 @@ class FormView extends React.Component {
     </div>
 </header>
     <section className="form-container">
+        <section className="both-sections">
         <main className="main-form-container">
-            <input
-                id="sentence-input"
+            <h2 className="instructions">Write your practice sentence here, and send it over to your Abuelita by clicking on the button! </h2>
+            <textarea
+                id="sentenceInput"
+                className="sentence-input"
                 type="text"
                 name="sentence"
                 placeholder="Write your sentence here"
@@ -63,6 +67,17 @@ class FormView extends React.Component {
         <button id="submitBtn" className="submit-button" onClick={event => this.submitSentence(event)}>Send to Abuelita!</button>
 
         </main>
+        </section>
+        <section className="sentence-board-container">
+            <div className="sentence-board">
+                <div className="board-border">
+                    <h3>Practice Sentences</h3>
+                    <h2 className="each-sentence">{(this.state.savedSentences)}</h2>
+                 </div>
+                {/* <div className="board-border-bottom"/> */}
+            </div>
+        </section>
+
         </section>
 </section> 
         )
