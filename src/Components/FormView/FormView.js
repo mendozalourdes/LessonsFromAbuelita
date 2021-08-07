@@ -48,6 +48,11 @@ class FormView extends React.Component {
                 <p className="saved-link">Saved Words & Sentences</p>
               </button>
             </NavLink>
+            <NavLink to={"/word"}>
+            <button className="word-button">
+              <p className="word-link">Show Me A Word</p>
+            </button>
+          </NavLink>
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
