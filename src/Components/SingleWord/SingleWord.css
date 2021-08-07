@@ -8,7 +8,7 @@
 }
 
 
-.go-to-form-view-btn {
+.word-button {
     height: 5vh;
     width: 9vw;
     border: none;
@@ -16,7 +16,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.go-to-form-view-btn:hover {
+.word-button:hover {
     transition: transform 125ms;
     transform: translateY(-10px);
     cursor: pointer;
