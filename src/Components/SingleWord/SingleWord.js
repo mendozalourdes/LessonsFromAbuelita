@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 
 const SingleWord = ({word, definition, image, newWord}) => {
-console.log("newWord", newWord)
     return (
 
  <section className="homepage-view">
