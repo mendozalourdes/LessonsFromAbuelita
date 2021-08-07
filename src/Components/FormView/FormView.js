@@ -6,16 +6,20 @@ import { NavLink } from "react-router-dom";
 
 
 class FormView extends React.Component {
-  constructor(props) {
+  constructor({props, handler}) {
     console.log("propssss", props);
-    super(props);
+    console.log("handler", handler)
+    super({props});
     this.state = {
-      savedWord: [],
-      sentence: [],
-      savedSentences: [],
-      id: Date.now(),
+      word: props.word,
+      sentence: props.sentence,
+      savedSentences: props.savedSentences,
+      definition: props.definition,
+      id: props.id,
       error: "",
+      image: props.image,
     };
+    console.log("FormState", this.state)
   }
 
   handleChange = (event) => {
@@ -25,10 +29,14 @@ class FormView extends React.Component {
   submitSentence = (event) => {
     event.preventDefault();
     const newSentence = this.state.sentence;
+    // this.setState({
+    //   savedSentences: [...this.state.savedSentences, newSentence]
+    // });
     this.setState({
-      savedSentences: [...this.state.savedSentences, newSentence],
-    });
-    // console.log("state", this.state)
+      savedSentences: [...this.state.savedSentences, newSentence]
+    })
+    {this.props.handler(newSentence)}
+    console.log("FormState2", this.state)
   };
 
   render() {
@@ -40,11 +48,19 @@ class FormView extends React.Component {
                 <h1 className="app-title">Lessons from Abuelita </h1>
             </button>
         </NavLink>
-          <div className="links">
-            <p className="saved-link">Saved Words & Sentences</p>
+        <div className="links">
+        <NavLink to={"/form"}>
+            <button className="saved-button">
+              <p className="saved-link">Saved Words & Sentences</p>
+            </button>
+        </NavLink>
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
+        <section>
+          <h1>{this.state.word}</h1>
+          <p>{this.state.definition}</p>
+        </section>
         <section className="form-container">
           <section className="both-sections">
             <main className="main-form-container">
