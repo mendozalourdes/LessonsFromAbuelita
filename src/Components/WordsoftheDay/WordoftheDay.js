@@ -39,7 +39,7 @@ class WordsoftheDay extends React.Component {
     render() {
         return (
             <main>
-               {this.state.word && this.state.definition && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />}
+               {this.state.word && this.state.definition && !this.state.error && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />}
             </main>
         )
 
