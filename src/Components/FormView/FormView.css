@@ -42,3 +42,8 @@
 .each-sentence {
     font-size: 20px;
 }
+
+.instructions{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
