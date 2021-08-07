@@ -49,10 +49,10 @@ class FormView extends React.Component {
               </button>
             </NavLink>
             <NavLink to={"/word"}>
-            <button className="word-button">
-              <p className="word-link">Show Me A Word</p>
-            </button>
-          </NavLink>
+              <button className="word-button">
+                <p className="word-link">Show Me A Word</p>
+              </button>
+            </NavLink>
             <p className="origin-story-link">About Us</p>
           </div>
         </header>

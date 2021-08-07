@@ -38,18 +38,19 @@ class Home extends React.Component {
   }
 
   fetchAWord() {
-    apiCalls.fetchAPIData("/random")
-    .then((response) => {
+    apiCalls
+      .fetchAPIData("/random")
+      .then((response) => {
         if (typeof response === "string") {
           this.setState({ error: response });
         } else {
-            this.setState({ word: response.body.Word})
-            this.setState({ definition: response.body.DefinitionMD})
-            this.setState({ image: response.body.urls.image})
+          this.setState({ word: response.body.Word });
+          this.setState({ definition: response.body.DefinitionMD });
+          this.setState({ image: response.body.urls.image });
         }
-    })
-    .catch((err) => this.setState({ error: err.message }));
-      }
+      })
+      .catch((err) => this.setState({ error: err.message }));
+  }
 
   handler(newSentence) {
     this.setState({
@@ -109,7 +110,17 @@ class Home extends React.Component {
               render={() => {
                 return (
                   <>
-                    {this.state.word && this.state.definition && this.state.image && !this.state.error && <SingleWord newWord={this.fetchAWord} word={this.state.word} definition={this.state.definition} image={this.state.image} />}
+                    {this.state.word &&
+                      this.state.definition &&
+                      this.state.image &&
+                      !this.state.error && (
+                        <SingleWord
+                          newWord={this.fetchAWord}
+                          word={this.state.word}
+                          definition={this.state.definition}
+                          image={this.state.image}
+                        />
+                      )}
                   </>
                 );
               }}

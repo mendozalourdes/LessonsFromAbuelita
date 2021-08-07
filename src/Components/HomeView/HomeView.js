@@ -17,7 +17,7 @@ const HomeView = () => {
               <p className="saved-link">Saved Words & Sentences</p>
             </button>
           </NavLink>
-        <NavLink to={"/word"}>
+          <NavLink to={"/word"}>
             <button className="word-button">
               <p className="word-link">Show Me A Word</p>
             </button>
