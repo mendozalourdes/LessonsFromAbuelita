@@ -14,7 +14,7 @@
 .sentence-board-container{
     background-color: yellow;
     height: 100vh;
-    width: 60vw;
+    width: 52vw;
 }
 
 .form-container {
@@ -33,7 +33,7 @@
 }
 
 .board-border {
-    border: 25px solid #964B00;
+    border: 25px solid #763d04;
     height: 55vh;
     width: 45vw;
     background-color: #000000cb;
@@ -46,4 +46,16 @@
 .instructions{
     margin-top: 10%;
     margin-bottom: 10%;
+    margin-left: 10%;
+}
+
+.title-button {
+    background-color: rgb(245, 28, 155) ;
+    border: none;
+}
+
+.title-button:hover {
+    transition: transform 125ms;
+    transform: translateY(15px);
+    cursor: pointer;
 }

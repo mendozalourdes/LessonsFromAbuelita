@@ -21,3 +21,24 @@
     transform: translateY(-10px);
     cursor: pointer;
 }
+
+.app-header {
+    border: 5px yellow dashed;
+    background-color: rgb(245, 28, 155) ;
+    font-size: 3vh;
+    width: 104vw;
+}
+
+.app-title{
+    font-size: 8vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+    margin: 0 0 0 0;   
+   }
+   
+.title-button {
+    background-color: rgb(245, 28, 155) ;
+    border: none;
+}

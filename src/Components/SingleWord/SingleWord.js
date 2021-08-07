@@ -1,6 +1,8 @@
 import React from "react";
 import "./SingleWord.css";
 import WordoftheDay from "../WordsoftheDay/WordoftheDay";
+import { NavLink } from "react-router-dom";
+
 
 // data.body.Word
 //data.body.DefinitionMD
@@ -20,7 +22,11 @@ const SingleWord = ({word, definition, image}) => {
 
  <section className="homepage-view">
 <header className="app-header">
-    <h1 className="app-title">Lessons from Abuelita </h1>
+    <NavLink to={"/"}>
+            <button className="title-button">
+                <h1 className="app-title">Lessons from Abuelita </h1>
+            </button>
+        </NavLink>
     <div className="links">
     <p className="saved-link">Saved Words & Sentences</p>
     <p className="origin-story-link">About Us</p>
@@ -34,7 +40,7 @@ const SingleWord = ({word, definition, image}) => {
             <p className="word-definition"> {definition} </p>
             <button className="go-to-form-view-btn">Let's Practice!</button>
         </section>
-</section> 
+ </section>  
 
     )
   
