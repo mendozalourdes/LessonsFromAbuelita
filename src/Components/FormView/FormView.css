@@ -14,7 +14,7 @@
 .sentence-board-container{
     background-color: yellow;
     height: 100vh;
-    width: 60vw;
+    width: 52vw;
 }
 
 .form-container {
@@ -46,4 +46,5 @@
 .instructions{
     margin-top: 10%;
     margin-bottom: 10%;
+    margin-left: 10%;
 }
