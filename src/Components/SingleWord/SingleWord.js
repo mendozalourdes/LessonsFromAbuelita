@@ -4,8 +4,8 @@ import WordoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
 
 
-const SingleWord = ({word, definition, image}) => {
-
+const SingleWord = ({word, definition, image, newWord}) => {
+console.log("newWord", newWord)
     return (
 
  <section className="homepage-view">
@@ -31,7 +31,13 @@ const SingleWord = ({word, definition, image}) => {
             </h1>
             <p className="word-definition"> {definition} </p>
             <NavLink to={"/form"}>
-                <button className="go-to-form-view-btn">Let's Practice!</button>
+                <button className="go-to-form-view-btn word-button">Let's Practice!</button>
+            </NavLink>
+            <NavLink to={"/word"}>
+                <button 
+                className="new-word-btn word-button"
+                onClick={newWord}
+                >Get A New Word</button>
             </NavLink>
 
 

@@ -20,6 +20,7 @@ class Home extends React.Component {
             savedSentences: [],
         };
         this.handler = this.handler.bind(this)
+        this.fetchAWord = this.fetchAWord.bind(this)
         console.log("state", this.state)
     }
 
@@ -36,6 +37,20 @@ class Home extends React.Component {
         })
         .catch((err) => this.setState({ error: err.message }));
           }
+
+        fetchAWord() {
+            apiCalls.fetchAPIData("/random")
+            .then((response) => {
+                if (typeof response === "string") {
+                  this.setState({ error: response });
+                } else {
+                    this.setState({ word: response.body.Word})
+                    this.setState({ definition: response.body.DefinitionMD})
+                    this.setState({ image: response.body.urls.image})
+                }
+            })
+            .catch((err) => this.setState({ error: err.message }));
+              }
 
         handler(newSentence) {
             // const newSentence = this.state.sentence;
@@ -64,14 +79,6 @@ class Home extends React.Component {
     render() {
         console.log("HomeState", this.state)
         return (
-            // <section className="homepage-view">
-            // <header className="app-header">
-            //     <h1 className="app-title">Lessons from Abuelita </h1>
-            //     <div className="links">
-            //     <p className="saved-link">Saved Words & Sentences</p>
-            //     <p className="origin-story-link">About Us</p>
-            //     </div>
-            // </header>
             <main className="main-container">
                 <section>
                 
@@ -90,7 +97,7 @@ class Home extends React.Component {
                 <Route
             exact
             path="/form"
-            render={({match}) => {
+            render={() => {
               return (
                 <>
               {this.state.word && this.state.definition && this.state.image && !this.state.error && <FormView handler={this.handler} props={this.state}/>}
@@ -105,7 +112,7 @@ class Home extends React.Component {
             render={() => {
               return (
                 <>
-               {this.state.word && this.state.definition && this.state.image && !this.state.error && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />}
+               {this.state.word && this.state.definition && this.state.image && !this.state.error && <SingleWord newWord={this.fetchAWord} word={this.state.word} definition={this.state.definition} image={this.state.image} />}
                 </>
               );
             }}
@@ -127,6 +134,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-//create this one as a class component, and hold state there. then this is where all of the other components are rendered which will make it easier to pass props to everywhere else 
-//then word of the day essentially just becomes word of the day 
