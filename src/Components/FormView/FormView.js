@@ -6,18 +6,20 @@ import { NavLink } from "react-router-dom";
 
 
 class FormView extends React.Component {
-  constructor({props}) {
+  constructor({props, handler}) {
     console.log("propssss", props);
-    super(props);
+    console.log("handler", handler)
+    super({props});
     this.state = {
       word: props.word,
-      sentence: [],
-      savedSentences: [],
+      sentence: props.sentence,
+      savedSentences: props.savedSentences,
       definition: props.definition,
-      // id: Date.now(),
+      id: props.id,
       error: "",
+      image: props.image,
     };
-    console.log("state", this.state)
+    console.log("FormState", this.state)
   }
 
   handleChange = (event) => {
@@ -27,10 +29,14 @@ class FormView extends React.Component {
   submitSentence = (event) => {
     event.preventDefault();
     const newSentence = this.state.sentence;
+    // this.setState({
+    //   savedSentences: [...this.state.savedSentences, newSentence]
+    // });
     this.setState({
-      savedSentences: [...this.state.savedSentences, newSentence],
-    });
- 
+      savedSentences: [...this.state.savedSentences, newSentence]
+    })
+    {this.props.handler(newSentence)}
+    console.log("FormState2", this.state)
   };
 
   render() {
@@ -43,6 +49,12 @@ class FormView extends React.Component {
             </button>
         </NavLink>
           <div className="links">
+        <NavLink to={"/"}>
+            <button className="saved-button">
+              <p className="saved-link">Saved Words & Sentences</p>
+            </button>
+        </NavLink>
+
             {/* <p className="saved-link">Saved Words & Sentences</p> */}
             <p className="origin-story-link">About Us</p>
           </div>

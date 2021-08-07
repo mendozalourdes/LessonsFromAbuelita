@@ -13,7 +13,7 @@ const HomeView = () => {
             </button>
         </NavLink>
             <div className="links">
-            {/* <p className="saved-link">Saved Words & Sentences</p> */}
+            <button><p className="saved-link">Saved Words & Sentences</p></button>  
             <p className="origin-story-link">About Us</p>
             </div>
         </header>

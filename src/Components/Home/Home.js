@@ -19,6 +19,8 @@ class Home extends React.Component {
             sentence: [],
             savedSentences: [],
         };
+        this.handler = this.handler.bind(this)
+        console.log("state", this.state)
     }
 
     componentDidMount() {
@@ -34,6 +36,15 @@ class Home extends React.Component {
         })
         .catch((err) => this.setState({ error: err.message }));
           }
+
+        handler(newSentence) {
+            // const newSentence = this.state.sentence;
+
+            this.setState({
+              savedSentences:[...this.state.savedSentences, newSentence]
+            })
+          }
+        
 
      handleChange = (event) => {
             this.setState({ [event.target.name]: event.target.value });
@@ -51,6 +62,7 @@ class Home extends React.Component {
 
 
     render() {
+        console.log("HomeState", this.state)
         return (
             // <section className="homepage-view">
             // <header className="app-header">
@@ -81,7 +93,7 @@ class Home extends React.Component {
             render={({match}) => {
               return (
                 <>
-              {this.state.word && this.state.definition && this.state.image && !this.state.error && <FormView props={this.state}/>}
+              {this.state.word && this.state.definition && this.state.image && !this.state.error && <FormView handler={this.handler} props={this.state}/>}
                 </>
               );
             }}
