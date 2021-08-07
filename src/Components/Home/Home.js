@@ -17,8 +17,10 @@ class Home extends React.Component {
       image: [],
       sentence: [],
       savedSentences: [],
+      savedWords: []
     };
     this.handler = this.handler.bind(this);
+    this.wordHandler = this.wordHandler.bind(this);
     this.fetchAWord = this.fetchAWord.bind(this);
   }
 
@@ -57,6 +59,13 @@ class Home extends React.Component {
       savedSentences: [...this.state.savedSentences, newSentence],
     });
   }
+
+  wordHandler(newWord) {
+    this.setState({
+      savedWords: [...this.state.savedWords, newWord],
+    });
+  }
+
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -97,7 +106,7 @@ class Home extends React.Component {
                       this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
-                        <FormView handler={this.handler} props={this.state} />
+                        <FormView wordHandler={this.wordHandler} handler={this.handler} props={this.state} />
                       )}
                   </>
                 );

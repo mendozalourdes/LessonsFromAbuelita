@@ -15,6 +15,7 @@ class FormView extends React.Component {
       id: props.id,
       error: "",
       image: props.image,
+      savedWords: props.savedWords,
     };
   }
 
@@ -30,6 +31,17 @@ class FormView extends React.Component {
     });
     {
       this.props.handler(newSentence);
+    }
+  };
+
+  saveThisWord = (event) => {
+    event.preventDefault();
+    const newWord = this.state.word;
+    this.setState({
+      savedWords: [...this.state.savedWords, newWord],
+    });
+    {
+      this.props.wordHandler(newWord);
     }
   };
 
@@ -59,6 +71,9 @@ class FormView extends React.Component {
         <section>
           <h1>{this.state.word}</h1>
           <p>{this.state.definition}</p>
+          <button className="save-word-btn"
+          onClick={(event) => this.saveThisWord(event)}
+          >Save This Word</button>
         </section>
         <section className="form-container">
           <section className="both-sections">
@@ -90,6 +105,7 @@ class FormView extends React.Component {
               <div className="board-border">
                 <h3>Practice Sentences</h3>
                 <h2 className="each-sentence">{this.state.savedSentences}</h2>
+                <h2 className="each-word">{this.state.savedWords}</h2>
               </div>
             </div>
           </section>
