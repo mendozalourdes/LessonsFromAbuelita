@@ -15,8 +15,9 @@ class Home extends React.Component {
             id: Date.now(),
             error: "",
             definition: [],
-            image: []
-
+            image: [],
+            sentence: [],
+            savedSentences: [],
         };
     }
 
@@ -33,6 +34,21 @@ class Home extends React.Component {
         })
         .catch((err) => this.setState({ error: err.message }));
           }
+
+     handleChange = (event) => {
+            this.setState({ [event.target.name]: event.target.value });
+          };
+        
+  submitSentence = (event) => {
+            event.preventDefault();
+            const newSentence = this.state.sentence;
+            this.setState({
+              savedSentences: [...this.state.savedSentences, newSentence],
+            });
+          };
+        
+
+
 
     render() {
         return (
@@ -62,10 +78,10 @@ class Home extends React.Component {
                 <Route
             exact
             path="/form"
-            render={() => {
+            render={({match}) => {
               return (
                 <>
-              <FormView/>
+              {this.state.word && this.state.definition && this.state.image && !this.state.error && <FormView props={this.state}/>}
                 </>
               );
             }}

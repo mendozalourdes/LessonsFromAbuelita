@@ -6,16 +6,18 @@ import { NavLink } from "react-router-dom";
 
 
 class FormView extends React.Component {
-  constructor(props) {
+  constructor({props}) {
     console.log("propssss", props);
     super(props);
     this.state = {
-      savedWord: [],
+      word: props.word,
       sentence: [],
       savedSentences: [],
-      id: Date.now(),
+      definition: props.definition,
+      // id: Date.now(),
       error: "",
     };
+    console.log("state", this.state)
   }
 
   handleChange = (event) => {
@@ -28,7 +30,7 @@ class FormView extends React.Component {
     this.setState({
       savedSentences: [...this.state.savedSentences, newSentence],
     });
-    // console.log("state", this.state)
+ 
   };
 
   render() {
@@ -41,10 +43,14 @@ class FormView extends React.Component {
             </button>
         </NavLink>
           <div className="links">
-            <p className="saved-link">Saved Words & Sentences</p>
+            {/* <p className="saved-link">Saved Words & Sentences</p> */}
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
+        <section>
+          <h1>{this.state.word}</h1>
+          <p>{this.state.definition}</p>
+        </section>
         <section className="form-container">
           <section className="both-sections">
             <main className="main-form-container">

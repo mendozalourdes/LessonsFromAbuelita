@@ -13,10 +13,6 @@ const HomeView = () => {
             </button>
         </NavLink>
             <div className="links">
-            <NavLink to={"/form"}>
-                <button> <p className="saved-link">Saved Words & Sentences</p> 
-                </button>
-            </NavLink>
             {/* <p className="saved-link">Saved Words & Sentences</p> */}
             <p className="origin-story-link">About Us</p>
             </div>

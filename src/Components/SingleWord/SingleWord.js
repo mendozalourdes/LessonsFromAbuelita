@@ -16,7 +16,7 @@ const SingleWord = ({word, definition, image}) => {
             </button>
         </NavLink>
     <div className="links">
-    <p className="saved-link">Saved Words & Sentences</p>
+    {/* <p className="saved-link">Saved Words & Sentences</p> */}
     <p className="origin-story-link">About Us</p>
     </div>
 </header>
