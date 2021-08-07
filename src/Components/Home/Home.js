@@ -100,4 +100,5 @@ class Home extends React.Component {
 
 export default Home;
 
- 
+//create this one as a class component, and hold state there. then this is where all of the other components are rendered which will make it easier to pass props to everywhere else 
+//then word of the day essentially just becomes word of the day 

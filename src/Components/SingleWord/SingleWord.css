@@ -38,3 +38,7 @@ h2{
     margin: 0 0 0 0;   
    }
    
+.title-button {
+    background-color: rgb(245, 28, 155) ;
+    border: none;
+}
