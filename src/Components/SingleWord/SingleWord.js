@@ -15,10 +15,14 @@ const SingleWord = ({word, definition, image}) => {
                 <h1 className="app-title">Lessons from Abuelita </h1>
             </button>
         </NavLink>
-    <div className="links">
-    {/* <p className="saved-link">Saved Words & Sentences</p> */}
-    <p className="origin-story-link">About Us</p>
-    </div>
+        <div className="links">
+        <NavLink to={"/form"}>
+            <button className="saved-button">
+              <p className="saved-link">Saved Words & Sentences</p>
+            </button>
+        </NavLink>
+            <p className="origin-story-link">About Us</p>
+          </div>
 </header>
         <section className="single-word-container">
             <img className="image-word" alt="image-of-word" src={image}/>

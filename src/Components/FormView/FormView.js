@@ -48,14 +48,12 @@ class FormView extends React.Component {
                 <h1 className="app-title">Lessons from Abuelita </h1>
             </button>
         </NavLink>
-          <div className="links">
-        <NavLink to={"/"}>
+        <div className="links">
+        <NavLink to={"/form"}>
             <button className="saved-button">
               <p className="saved-link">Saved Words & Sentences</p>
             </button>
         </NavLink>
-
-            {/* <p className="saved-link">Saved Words & Sentences</p> */}
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
