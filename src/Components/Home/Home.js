@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import apiCalls from "../../Utilities/apiCalls";
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from "react-router-dom";
 import SingleWord from '../SingleWord/SingleWord';
 import WordsoftheDay from '../WordsoftheDay/WordoftheDay';
 import FormView from '../FormView/FormView';
@@ -36,28 +36,29 @@ class Home extends React.Component {
 
     render() {
         return (
-            <section className="homepage-view">
-            <header className="app-header">
-                <h1 className="app-title">Lessons from Abuelita </h1>
-                <div className="links">
-                <p className="saved-link">Saved Words & Sentences</p>
-                <p className="origin-story-link">About Us</p>
-                </div>
-            </header>
+            // <section className="homepage-view">
+            // <header className="app-header">
+            //     <h1 className="app-title">Lessons from Abuelita </h1>
+            //     <div className="links">
+            //     <p className="saved-link">Saved Words & Sentences</p>
+            //     <p className="origin-story-link">About Us</p>
+            //     </div>
+            // </header>
             <main className="main-container">
-                
                 <section>
+                
+            <Switch> 
                 <Route
             exact
             path="/"
             render={() => {
-              return (
-                <>
+                return (
+                    <>
               <HomeView/>
                 </>
               );
             }}
-          />
+            />
                 <Route
             exact
             path="/form"
@@ -72,23 +73,21 @@ class Home extends React.Component {
 
         <Route
             exact
-            path="/form"
+            path="/word"
             render={() => {
               return (
                 <>
-              <FormView/>
+               {this.state.word && this.state.definition && this.state.image && !this.state.error && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />}
                 </>
               );
             }}
           />
 
-
-                    {/* <HomeView/> */}
-                     {/* {this.state.word && this.state.definition && !this.state.error && <SingleWord word={this.state.word} definition={this.state.definition} image={this.state.image} />} */}
-                     {/* <FormView/> */}
+                <Redirect to="/" />
+                </Switch>
                 </section>
             </main>
-        </section>
+        // </section>
  
         )
 
@@ -101,5 +100,4 @@ class Home extends React.Component {
 
 export default Home;
 
-//create this one as a class component, and hold state there. then this is where all of the other components are rendered which will make it easier to pass props to everywhere else 
-//then word of the day essentially just becomes word of the day 
+ 

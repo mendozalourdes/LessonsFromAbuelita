@@ -2,6 +2,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "./FormView.css";
 import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
+import { NavLink } from "react-router-dom";
+
 
 class FormView extends React.Component {
   constructor(props) {
@@ -31,14 +33,18 @@ class FormView extends React.Component {
 
   render() {
     return (
-      // <section className="homepage-view">
-      //   <header className="app-header">
-      //     <h1 className="app-title">Lessons from Abuelita </h1>
-      //     <div className="links">
-      //       <p className="saved-link">Saved Words & Sentences</p>
-      //       <p className="origin-story-link">About Us</p>
-      //     </div>
-      //   </header>
+      <section className="homepage-view">
+        <header className="app-header">
+        <NavLink to={"/"}>
+            <button className="title-button">
+                <h1 className="app-title">Lessons from Abuelita </h1>
+            </button>
+        </NavLink>
+          <div className="links">
+            <p className="saved-link">Saved Words & Sentences</p>
+            <p className="origin-story-link">About Us</p>
+          </div>
+        </header>
         <section className="form-container">
           <section className="both-sections">
             <main className="main-form-container">
@@ -74,7 +80,7 @@ class FormView extends React.Component {
             </div>
           </section>
         </section>
-      /* </section> */
+       </section> 
     );
   }
 }

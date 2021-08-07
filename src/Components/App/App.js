@@ -9,8 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
          <Home/>
-         {/* <WordsoftheDay/>
-         <FormView/> */}
       </header>
     </div>
   )

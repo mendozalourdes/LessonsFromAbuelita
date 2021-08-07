@@ -1,9 +1,23 @@
 import React from 'react';
 import './HomeView.css';
+import { NavLink } from "react-router-dom";
+
 
 const HomeView = () => {
     return (
-        
+        <section className="homepage-view">
+        <header className="app-header">
+        <NavLink to={"/"}>
+            <button className="title-button">
+                <h1 className="app-title">Lessons from Abuelita </h1>
+            </button>
+        </NavLink>
+            <div className="links">
+            <p className="saved-link">Saved Words & Sentences</p>
+            <p className="origin-story-link">About Us</p>
+            </div>
+        </header>
+     
             <section className="main-container">
                 <section className="main-section">
                     <h3>
@@ -12,8 +26,9 @@ const HomeView = () => {
                     <button className="start-learning-btn">Let's start learning!</button>
                 </section>
             </section>
-        
+        </section>
     )
 }
 
 export default HomeView;
+
