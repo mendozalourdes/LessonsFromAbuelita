@@ -7,7 +7,7 @@ import FormView from "../FormView/FormView";
 import HomeView from "../HomeView/HomeView";
 import Error from "../Error/Error";
 import FetchFail from "../FetchFail/FetchFail";
-import LoadingImage from '../../assets/LoadingImage.png' 
+import LoadingImage from "../../assets/LoadingImage.png";
 
 class Home extends React.Component {
   constructor() {
@@ -20,7 +20,7 @@ class Home extends React.Component {
       image: [],
       sentence: [],
       savedSentences: [],
-      savedWords: []
+      savedWords: [],
     };
     this.handler = this.handler.bind(this);
     this.wordHandler = this.wordHandler.bind(this);
@@ -32,10 +32,8 @@ class Home extends React.Component {
       .fetchAPIData("/random")
       .then((response) => {
         if (typeof response === "string") {
-          console.log("errorrrr", this.state.error)
           this.setState({ error: response });
         } else {
-          console.log("daaattaaaa", response)
           this.setState({ word: response.body.Word });
           this.setState({ definition: response.body.DefinitionMD });
           this.setState({ image: response.body.urls.image });
@@ -44,16 +42,13 @@ class Home extends React.Component {
       .catch((err) => this.setState({ error: err.message }));
   }
 
- 
   fetchAWord() {
     apiCalls
       .fetchAPIData("/random")
       .then((response) => {
         if (typeof response === "string") {
-          console.log("FETCHerrorrrr", this.state.error)
           this.setState({ error: response });
         } else {
-          console.log("FETCHDATA", response)
           this.setState({ word: response.body.Word });
           this.setState({ definition: response.body.DefinitionMD });
           this.setState({ image: response.body.urls.image });
@@ -74,7 +69,6 @@ class Home extends React.Component {
     });
   }
 
-
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -88,11 +82,10 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log("HomeState", this.state);
+
     return (
       <main className="main-container">
-
-    {!this.state.word && !this.state.error.length && (
+        {!this.state.word && !this.state.error.length && (
           <div className="loading-view">
             <h2> Loading Abuelita's Page...</h2>
             <img
@@ -103,8 +96,9 @@ class Home extends React.Component {
           </div>
         )}
 
-{this.state.error.length && (<FetchFail errorMsg="Sorry, something is wrong with Abuelita's page. Please try again later." />)} 
-
+        {this.state.error.length && (
+          <FetchFail errorMsg="Sorry, something is wrong with Abuelita's page. Please try again later." />
+        )}
 
         <section>
           <Switch>
@@ -112,12 +106,7 @@ class Home extends React.Component {
               exact
               path="/"
               render={() => {
-                return (
-                  <>
-                    {!this.state.error.length && <HomeView />}
-                
-                  </>
-                );
+                return <>{!this.state.error.length && <HomeView />}</>;
               }}
             />
             <Route
@@ -130,7 +119,11 @@ class Home extends React.Component {
                       this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
-                        <FormView wordHandler={this.wordHandler} handler={this.handler} props={this.state} />
+                        <FormView
+                          wordHandler={this.wordHandler}
+                          handler={this.handler}
+                          props={this.state}
+                        />
                       )}
                   </>
                 );
@@ -162,7 +155,9 @@ class Home extends React.Component {
               render={() => {
                 return (
                   <>
-                    {!this.state.error.length && <Error errorMsg="That page does not exist. Go back home?"/>}
+                    {!this.state.error.length && (
+                      <Error errorMsg="That page does not exist. Go back home?" />
+                    )}
                   </>
                 );
               }}
