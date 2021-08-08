@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const SingleWord = ({ word, definition, image, newWord }) => {
+    console.log("gimmmmee", definition)
   return (
     <section className="homepage-view">
       <header className="app-header">
@@ -46,7 +47,7 @@ SingleWord.propTypes = {
     word: PropTypes.string.isRequired,
     definition: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired, 
-    newWord: PropTypes.string.isRequired
+    newWord: PropTypes.any.isRequired
   }
 
 export default SingleWord;

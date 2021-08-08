@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 const SavedSentences = (props) => {
 
     return (
+            <p className="each-sentence">{props.sentence}</p>
 
-        <h2 className="each-sentence">{props.sentence}</h2>
-  
     );
   };
 

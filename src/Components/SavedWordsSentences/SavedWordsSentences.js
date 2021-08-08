@@ -3,6 +3,7 @@ import SavedSentences from "../SavedSentences/SavedSentences";
 import PropTypes from 'prop-types';
 
 const SavedWordsSentences = ({ props }) => {
+  console.log("props??", props)
     
   const allSentences = props.savedSentences.map((sentence, index) => {
     return (
@@ -17,15 +18,15 @@ const SavedWordsSentences = ({ props }) => {
 
   return (
     <section>
-        <h3 className="each-word">{props.savedWords.join(", ")}</h3>
-        <h3 className="one-sentence"> {allSentences}</h3>
+        <p className="each-word">{props.savedWords.join(", ")}</p>
+        <div className="one-sentence"> {allSentences}</div>
     </section>
   );
 };
 
 SavedWordsSentences.propTypes = {
-  savedSentences: PropTypes.any.isRequired,
-  savedWords: PropTypes.any.isRequired
+  savedSentences: PropTypes.array,
+  savedWords: PropTypes.array
 }
 
 export default SavedWordsSentences;

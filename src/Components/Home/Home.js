@@ -13,11 +13,11 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      word: [],
+      word: "",
       id: Date.now(),
       error: "",
-      definition: [],
-      image: [],
+      definition: "",
+      image: "",
       sentence: [],
       savedSentences: [],
       savedWords: [],
