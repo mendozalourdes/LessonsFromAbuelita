@@ -37,6 +37,9 @@
     height: 55vh;
     width: 45vw;
     background-color: #000000cb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .each-sentence {

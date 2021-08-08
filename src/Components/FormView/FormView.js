@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import "./FormView.css";
 import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
+import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
 
 class FormView extends React.Component {
   constructor({ props }) {
@@ -103,9 +104,16 @@ class FormView extends React.Component {
           <section className="sentence-board-container">
             <div className="sentence-board">
               <div className="board-border">
-                <h3>Practice Sentences</h3>
-                <h2 className="each-sentence">{this.state.savedSentences}</h2>
-                <h2 className="each-word">{this.state.savedWords}</h2>
+                <div>
+                  <h3>Saved Sentences</h3>
+                  <h2 className="each-sentence">{this.state.savedSentences}</h2>
+                </div>
+                <div>
+                  <h3>Saved Words</h3>
+                  <h2 className="each-word">{this.state.savedWords && this.state.savedSentences && <SavedWordsSentences props={this.state}/>}</h2>
+
+                  {/* <h2 className="each-word">{this.state.savedWords}</h2> */}
+                </div>
               </div>
             </div>
           </section>
