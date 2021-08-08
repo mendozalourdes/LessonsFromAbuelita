@@ -90,6 +90,7 @@ class Home extends React.Component {
             <h2> Loading Abuelita's Page...</h2>
             <img
               className="loading-image"
+              id="loadingImg"
               alt={"Loading-page-image"}
               src={LoadingImage}
             ></img>
@@ -106,7 +107,7 @@ class Home extends React.Component {
               exact
               path="/"
               render={() => {
-                return <>{!this.state.error.length && <HomeView />}</>;
+                return <>{this.state.word && !this.state.error.length && <HomeView />}</>;
               }}
             />
             <Route
