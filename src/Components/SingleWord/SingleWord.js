@@ -2,6 +2,8 @@ import React from "react";
 import "./SingleWord.css";
 import WordoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 
 const SingleWord = ({ word, definition, image, newWord }) => {
   return (
@@ -39,5 +41,12 @@ const SingleWord = ({ word, definition, image, newWord }) => {
     </section>
   );
 };
+
+SingleWord.propTypes = {
+    word: PropTypes.string.isRequired,
+    definition: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired, 
+    newWord: PropTypes.string.isRequired
+  }
 
 export default SingleWord;

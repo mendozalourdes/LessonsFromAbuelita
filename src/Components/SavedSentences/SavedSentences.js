@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 const SavedSentences = (props) => {
 
@@ -8,6 +10,10 @@ const SavedSentences = (props) => {
   
     );
   };
+
+  SavedSentences.propTypes = {
+    sentence: PropTypes.string.isRequired
+  }
   
   export default SavedSentences;
   

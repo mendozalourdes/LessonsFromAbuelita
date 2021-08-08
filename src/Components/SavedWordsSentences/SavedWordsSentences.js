@@ -1,5 +1,6 @@
 import React from "react";
 import SavedSentences from "../SavedSentences/SavedSentences";
+import PropTypes from 'prop-types';
 
 const SavedWordsSentences = ({ props }) => {
     
@@ -21,5 +22,10 @@ const SavedWordsSentences = ({ props }) => {
     </section>
   );
 };
+
+SavedWordsSentences.propTypes = {
+  savedSentences: PropTypes.any.isRequired,
+  savedWords: PropTypes.any.isRequired
+}
 
 export default SavedWordsSentences;
