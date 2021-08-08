@@ -30,8 +30,10 @@ class Home extends React.Component {
       .fetchAPIData("/random")
       .then((response) => {
         if (typeof response === "string") {
+          console.log("errorrrr", this.state.error)
           this.setState({ error: response });
         } else {
+          console.log("daaattaaaa", response)
           this.setState({ word: response.body.Word });
           this.setState({ definition: response.body.DefinitionMD });
           this.setState({ image: response.body.urls.image });
@@ -40,13 +42,16 @@ class Home extends React.Component {
       .catch((err) => this.setState({ error: err.message }));
   }
 
+ 
   fetchAWord() {
     apiCalls
       .fetchAPIData("/random")
       .then((response) => {
         if (typeof response === "string") {
+          console.log("FETCHerrorrrr", this.state.error)
           this.setState({ error: response });
         } else {
+          console.log("FETCHDATA", response)
           this.setState({ word: response.body.Word });
           this.setState({ definition: response.body.DefinitionMD });
           this.setState({ image: response.body.urls.image });
@@ -121,7 +126,6 @@ class Home extends React.Component {
                 return (
                   <>
                     {this.state.word &&
-                      this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
                         <SingleWord
