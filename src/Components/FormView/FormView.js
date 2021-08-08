@@ -105,11 +105,11 @@ class FormView extends React.Component {
             <div className="sentence-board">
               <div className="board-border">
                 <div>
-                  <h3>Saved Sentences</h3>
-                  <h2 className="each-sentence">{this.state.savedSentences}</h2>
-                </div>
-                <div>
-                  <h3>Saved Words</h3>
+                  {/* <h3>Saved Sentences</h3> */}
+                  {/* <h2 className="each-sentence">{this.state.savedSentences}</h2> */}
+                {/* </div> */}
+                {/* <div> */}
+                  {/* <h3>Saved Words</h3> */}
                   <h2 className="each-word">{this.state.savedWords && this.state.savedSentences && <SavedWordsSentences props={this.state}/>}</h2>
 
                   {/* <h2 className="each-word">{this.state.savedWords}</h2> */}
