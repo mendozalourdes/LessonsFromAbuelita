@@ -1,10 +1,11 @@
 import React from "react";
 import "./Home.css";
 import apiCalls from "../../Utilities/apiCalls";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import SingleWord from "../SingleWord/SingleWord";
 import FormView from "../FormView/FormView";
 import HomeView from "../HomeView/HomeView";
+import Error from "../Error/Error";
 
 class Home extends React.Component {
   constructor() {
@@ -135,7 +136,11 @@ class Home extends React.Component {
               }}
             />
 
-            <Redirect to="/" />
+            <Route 
+            render={() => (
+              <Error errorMsg="That page does not exist. Go back home?"/>
+            )}   
+            />
           </Switch>
         </section>
       </main>
