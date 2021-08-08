@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import UserError from '../../assets/UserError.png' 
-
+import PropTypes from 'prop-types';
 
 
 const Error = ({errorMsg}) => {
@@ -32,6 +32,12 @@ const Error = ({errorMsg}) => {
       </section>
       );
     };
+
+    Error.propTypes = {
+      errorMsg: PropTypes.string.isRequired
+    }
      
+
+
 
 export default Error;

@@ -13,11 +13,11 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      word: [],
+      word: "",
       id: Date.now(),
       error: "",
-      definition: [],
-      image: [],
+      definition: "",
+      image: "",
       sentence: [],
       savedSentences: [],
       savedWords: [],
@@ -116,7 +116,6 @@ class Home extends React.Component {
                 return (
                   <>
                     {this.state.word &&
-                      this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
                         <FormView
