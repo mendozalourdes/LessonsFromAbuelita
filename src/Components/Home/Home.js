@@ -116,7 +116,6 @@ class Home extends React.Component {
                 return (
                   <>
                     {this.state.word &&
-                      this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
                         <FormView

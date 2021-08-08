@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import ServerError from '../../assets/ServerError.png' 
 import "./FetchFail.css";
+import PropTypes from 'prop-types';
 
 
 const FetchFail = ({errorMsg}) => {
@@ -33,5 +34,8 @@ const FetchFail = ({errorMsg}) => {
       );
     };
      
+    FetchFail.propTypes = {
+        errorMsg: PropTypes.string.isRequired
+      }
 
 export default FetchFail;
