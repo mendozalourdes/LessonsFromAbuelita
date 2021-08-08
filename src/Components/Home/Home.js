@@ -7,6 +7,7 @@ import FormView from "../FormView/FormView";
 import HomeView from "../HomeView/HomeView";
 import Error from "../Error/Error";
 import FetchFail from "../FetchFail/FetchFail";
+// import ServerError from '../../assets/ServerError.png' 
 
 class Home extends React.Component {
   constructor() {
@@ -97,7 +98,7 @@ class Home extends React.Component {
             {/* <img
               className="loading-image"
               alt={"Loading movies"}
-              src={loadingImage}
+              src={ServerError}
             ></img> */}
           </div>
         )}
