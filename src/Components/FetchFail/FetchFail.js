@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import UserError from '../../assets/UserError.png' 
+import ServerError from '../../assets/ServerError.png' 
+import "./FetchFail.css";
 
 
-
-const Error = ({errorMsg}) => {
+const FetchFail = ({errorMsg}) => {
     return (
      
          <section className="homepage-view">
@@ -17,21 +17,21 @@ const Error = ({errorMsg}) => {
       </header>
       <section>
           <h2>{errorMsg}</h2>
-          <img
+                <img
                     className="error-image"
-                    alt={"User-Error-Image"}
-                    src={UserError}
+                    alt={"Error-Image"}
+                    src={ServerError}
                   ></img>
       </section>
       <div>
-          {errorMsg ===
-            "That page does not exist. Go back home?" && (
-            <NavLink to='/'> Take Me to Abuelita's Home</NavLink>
-          )}
+        {errorMsg ===
+            "Sorry, something is wrong with Abuelita's page. Please try again later." && (
+                <NavLink to='/'>Try Again</NavLink>
+                )}
       </div>
       </section>
       );
     };
      
 
-export default Error;
+export default FetchFail;

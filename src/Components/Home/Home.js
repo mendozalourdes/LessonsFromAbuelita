@@ -1,10 +1,13 @@
 import React from "react";
 import "./Home.css";
 import apiCalls from "../../Utilities/apiCalls";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import SingleWord from "../SingleWord/SingleWord";
 import FormView from "../FormView/FormView";
 import HomeView from "../HomeView/HomeView";
+import Error from "../Error/Error";
+import FetchFail from "../FetchFail/FetchFail";
+import LoadingImage from "../../assets/LoadingImage.png";
 
 class Home extends React.Component {
   constructor() {
@@ -17,7 +20,7 @@ class Home extends React.Component {
       image: [],
       sentence: [],
       savedSentences: [],
-      savedWords: []
+      savedWords: [],
     };
     this.handler = this.handler.bind(this);
     this.wordHandler = this.wordHandler.bind(this);
@@ -66,7 +69,6 @@ class Home extends React.Component {
     });
   }
 
-
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -80,20 +82,31 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log("HomeState", this.state);
+
     return (
       <main className="main-container">
+        {!this.state.word && !this.state.error.length && (
+          <div className="loading-view">
+            <h2> Loading Abuelita's Page...</h2>
+            <img
+              className="loading-image"
+              alt={"Loading-page-image"}
+              src={LoadingImage}
+            ></img>
+          </div>
+        )}
+
+        {this.state.error.length && (
+          <FetchFail errorMsg="Sorry, something is wrong with Abuelita's page. Please try again later." />
+        )}
+
         <section>
           <Switch>
             <Route
               exact
               path="/"
               render={() => {
-                return (
-                  <>
-                    <HomeView />
-                  </>
-                );
+                return <>{!this.state.error.length && <HomeView />}</>;
               }}
             />
             <Route
@@ -106,7 +119,11 @@ class Home extends React.Component {
                       this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
-                        <FormView wordHandler={this.wordHandler} handler={this.handler} props={this.state} />
+                        <FormView
+                          wordHandler={this.wordHandler}
+                          handler={this.handler}
+                          props={this.state}
+                        />
                       )}
                   </>
                 );
@@ -120,7 +137,6 @@ class Home extends React.Component {
                 return (
                   <>
                     {this.state.word &&
-                      this.state.definition &&
                       this.state.image &&
                       !this.state.error && (
                         <SingleWord
@@ -135,7 +151,17 @@ class Home extends React.Component {
               }}
             />
 
-            <Redirect to="/" />
+            <Route
+              render={() => {
+                return (
+                  <>
+                    {!this.state.error.length && (
+                      <Error errorMsg="That page does not exist. Go back home?" />
+                    )}
+                  </>
+                );
+              }}
+            />
           </Switch>
         </section>
       </main>
