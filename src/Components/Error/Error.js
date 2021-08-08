@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import UserError from '../../assets/UserError.png' 
 
 
 
@@ -16,11 +17,18 @@ const Error = ({errorMsg}) => {
       </header>
       <section>
           <h2>{errorMsg}</h2>
+          <img
+                    className="error-image"
+                    alt={"User-Error-Image"}
+                    src={UserError}
+                  ></img>
+      </section>
+      <div>
           {errorMsg ===
             "That page does not exist. Go back home?" && (
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/'> Take Me to Abuelita's Home</NavLink>
           )}
-      </section>
+      </div>
       </section>
       );
     };
