@@ -157,10 +157,14 @@ class Home extends React.Component {
               }}
             />
 
-            <Route 
-            render={() => (
-              <Error errorMsg="That page does not exist. Go back home?"/>
-            )}   
+            <Route
+              render={() => {
+                return (
+                  <>
+                    {!this.state.error.length && <Error errorMsg="That page does not exist. Go back home?"/>}
+                  </>
+                );
+              }}
             />
           </Switch>
         </section>
