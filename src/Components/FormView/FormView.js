@@ -3,6 +3,9 @@ import { Route } from "react-router-dom";
 import "./FormView.css";
 import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
+import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
+import SavedSentences from "../SavedSentences/SavedSentences";
+import SavedWords from "../SavedWords/SavedWords";
 
 class FormView extends React.Component {
   constructor({ props }) {
@@ -15,6 +18,7 @@ class FormView extends React.Component {
       id: props.id,
       error: "",
       image: props.image,
+      savedWords: props.savedWords,
     };
   }
 
@@ -25,11 +29,30 @@ class FormView extends React.Component {
   submitSentence = (event) => {
     event.preventDefault();
     const newSentence = this.state.sentence;
-    this.setState({
-      savedSentences: [...this.state.savedSentences, newSentence],
-    });
+    if(!this.state.savedSentences.includes(newSentence)) {
+      this.setState({
+        savedSentences: [...this.state.savedSentences, newSentence],
+      });
+    } else {
+      return null
+    }
     {
       this.props.handler(newSentence);
+    }
+  };
+
+  saveThisWord = (event) => {
+    event.preventDefault();
+    const newWord = this.state.word;
+    if (!this.state.savedWords.includes(newWord)) {
+      this.setState({
+        savedWords: [...this.state.savedWords, newWord],
+      });
+    } else {
+      return null;
+    }
+    {
+      this.props.wordHandler(newWord);
     }
   };
 
@@ -59,6 +82,12 @@ class FormView extends React.Component {
         <section>
           <h1>{this.state.word}</h1>
           <p>{this.state.definition}</p>
+          <button
+            className="save-word-btn"
+            onClick={(event) => this.saveThisWord(event)}
+          >
+            Save This Word
+          </button>
         </section>
         <section className="form-container">
           <section className="both-sections">
@@ -88,8 +117,16 @@ class FormView extends React.Component {
           <section className="sentence-board-container">
             <div className="sentence-board">
               <div className="board-border">
-                <h3>Practice Sentences</h3>
-                <h2 className="each-sentence">{this.state.savedSentences}</h2>
+                <div>
+                  <h1 className="saved-section-heading">
+                    Saved Words & Sentences
+                  </h1>
+                  <h3 className="words-and-sentences">
+                    {this.state.savedWords && this.state.savedSentences && (
+                      <SavedWordsSentences props={this.state} />
+                    )}
+                  </h3>
+                </div>
               </div>
             </div>
           </section>
