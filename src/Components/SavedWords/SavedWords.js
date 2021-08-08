@@ -1,18 +1,21 @@
 import React from "react";
 
-const SavedWords = ({savedWords}) => {
-console.log("saaaaved", savedWords)
-    return (
-        <section>
-                <div>
-                  <h3>Saved Words</h3>
-                  <h2 className="each-word">{savedWords}</h2>
-                </div>
-        </section>
-    );
-  };
-  
-  export default SavedWords;
+  const SavedWords = (props) => {
+    console.log("saaaavedWord", props)
+    console.log("savedWordsSection", props.savedWords)
+        return (
+            // <section>
+            //         <div>
+                      <h2 className="each-word">{(props.savedWords).join(', ')}</h2>
+            //         </div>
+            // </section>
+        );
+      };
+      
+      export default SavedWords;
+      
+
+
   
 //   import React from "react";
 

@@ -1,14 +1,14 @@
 import React from "react";
 
-const SavedSentences = ({savedSentences}) => {
-console.log("saaaavedSENTENCE", savedSentences)
+const SavedSentences = (props) => {
+console.log("saaaavedSENTENCE", props)
+
     return (
-        <section>
-                <div>
-                  <h3>Saved Sentences</h3>
-                  <h2 className="each-sentence">{savedSentences}</h2>
-                </div>
-        </section>
+        // <section>
+        //         <div>
+                  <h2 className="each-sentence">{props.sentence}</h2>
+        //         </div>
+        // </section>
     );
   };
   
