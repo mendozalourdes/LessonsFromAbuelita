@@ -67,12 +67,16 @@ class FormView extends React.Component {
           </NavLink>
           <div className="links">
             <NavLink to={"/form"}>
-              <button className="saved-button">
+            <button className="saved-button"
+            id="savedBtn"
+            >
                 <p className="saved-link">Saved Words & Sentences</p>
               </button>
             </NavLink>
             <NavLink to={"/word"}>
-              <button className="word-button">
+            <button className="word-button"
+            id="wordBtn"
+            >
                 <p className="word-link">Show Me A Word</p>
               </button>
             </NavLink>
@@ -80,10 +84,11 @@ class FormView extends React.Component {
           </div>
         </header>
         <section>
-          <h1>{this.state.word}</h1>
+          <h1 id="currentWord">{this.state.word}</h1>
           <p>{this.state.definition}</p>
           <button
             className="save-word-btn"
+            id="saveThisWordBtn"
             onClick={(event) => this.saveThisWord(event)}
           >
             Save This Word

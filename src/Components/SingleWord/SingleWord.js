@@ -17,7 +17,9 @@ const SingleWord = ({ word, definition, image, newWord }) => {
         </NavLink>
         <div className="links">
           <NavLink to={"/form"}>
-            <button className="saved-button">
+          <button className="saved-button"
+            id="savedBtn"
+            >
               <p className="saved-link">Saved Words & Sentences</p>
             </button>
           </NavLink>

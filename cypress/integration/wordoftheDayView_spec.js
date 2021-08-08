@@ -76,6 +76,10 @@ describe("Word Page View", () => {
     cy.get("#savedBtn");
   });
 
+  it("Should show the random word", () => {
+    cy.get("#randomWord");
+  });
+
   it("Should show the user an image of the word", () => {
     cy.get("img");
   });
