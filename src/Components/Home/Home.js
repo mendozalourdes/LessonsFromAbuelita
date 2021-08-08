@@ -6,6 +6,7 @@ import SingleWord from "../SingleWord/SingleWord";
 import FormView from "../FormView/FormView";
 import HomeView from "../HomeView/HomeView";
 import Error from "../Error/Error";
+import FetchFail from "../FetchFail/FetchFail";
 
 class Home extends React.Component {
   constructor() {
@@ -89,6 +90,21 @@ class Home extends React.Component {
     console.log("HomeState", this.state);
     return (
       <main className="main-container">
+
+    {!this.state.word && !this.state.error.length && (
+          <div className="loading-view">
+            <h2> Loading Abuelita's Page...</h2>
+            {/* <img
+              className="loading-image"
+              alt={"Loading movies"}
+              src={loadingImage}
+            ></img> */}
+          </div>
+        )}
+
+{this.state.error.length && (<FetchFail errorMsg="Sorry, something is wrong with Abuelita's page. Please try again later." />)} 
+
+
         <section>
           <Switch>
             <Route
@@ -97,7 +113,8 @@ class Home extends React.Component {
               render={() => {
                 return (
                   <>
-                    <HomeView />
+                    {!this.state.error.length && <HomeView />}
+                
                   </>
                 );
               }}
