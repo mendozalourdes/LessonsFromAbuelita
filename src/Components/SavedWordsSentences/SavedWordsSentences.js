@@ -19,7 +19,7 @@ const SavedWordsSentences = ({ props }) => {
   return (
     <section>
         <p className="each-word">{props.savedWords.join(", ")}</p>
-        <div className="one-sentence"> {allSentences}</div>
+        <div id="oneSentence" className="one-sentence"> {allSentences}</div>
     </section>
   );
 };

@@ -104,6 +104,15 @@ describe("Saved Words & Sentences Page View", () => {
     cy.get("p").should("have.class", "each-word");
   });
 
+  it("Should only be able to save the word once and have it displayed on the board once", () => {
+    cy.get("#saveThisWordBtn").click();
+    cy.get("p").should("have.class", "each-word");
+    cy.get("#saveThisWordBtn").click();
+    cy.get("p").should("have.class", "each-word");
+
+  });
+
+
   it("Should display the saved sentence after the user clicks on the Submit Button", () => {
     cy.get("textarea").type("This is a practice sentence.");
     cy.get("#submitBtn").click();
@@ -111,4 +120,11 @@ describe("Saved Words & Sentences Page View", () => {
       .should("have.class", "each-sentence")
       .contains("This is a practice sentence.");
   });
+
+  it("Should not see anything displayed if they submit an empty text area", () => {
+    cy.get("textarea");
+    cy.get("#submitBtn").click();
+    cy.get("#oneSentence")
+  });
+
 });
