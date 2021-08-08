@@ -1,0 +1,16 @@
+{
+    "word": [
+        {
+            "body": {
+                "Word": "discriminar",
+                "urls": {
+                "url": "https://palabras-aleatorias-public-api.herokuapp.com/palabras-aleatorias?Word=discriminar",
+                "image": "https://palabras-aleatorias-public-api.herokuapp.com/word-as-image?word=discriminar"
+                },
+                "DefinitionMD": " Dar trato de inferioridad a una persona o colectividad por motivos raciales,  religiosos,  de sexo,  de clase social o casta u otros motivos ideológicos:discriminar a una persona por cualquier motivo es un acto inconstitucional.  Separar,  diferenciar una cosa de otra"
+            }
+
+        }
+    ]
+
+}

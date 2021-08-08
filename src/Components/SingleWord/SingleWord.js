@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const SingleWord = ({ word, definition, image, newWord }) => {
-    console.log("gimmmmee", definition)
+
   return (
     <section className="homepage-view">
       <header className="app-header">
@@ -25,16 +25,18 @@ const SingleWord = ({ word, definition, image, newWord }) => {
         </div>
       </header>
       <section className="single-word-container">
-        <img className="image-word" alt="image-of-word" src={image} />
-        <h1 className="random-word">{word}</h1>
+        <img className="image-word" id="wordImage" alt="image-of-word" src={image} />
+        <h1 className="random-word" id="randomWord">{word}</h1>
         <p className="word-definition"> {definition} </p>
         <NavLink to={"/form"}>
-          <button className="go-to-form-view-btn word-button">
+          <button className="go-to-form-view-btn word-button"
+          id="formViewBtn"
+          >
             Let's Practice!
           </button>
         </NavLink>
         <NavLink to={"/word"}>
-          <button className="new-word-btn word-button" onClick={newWord}>
+          <button className="new-word-btn word-button" id="getNewWord" onClick={newWord}>
             Get A New Word
           </button>
         </NavLink>
