@@ -36,7 +36,7 @@ const HomeView = () => {
       </header>
 
       <section className="main-container">
-        <section className="main-section">
+        <body className="main-section">
           <h3>
             Welcome to <h2>Lessons from Abuelita!</h2> This is a place where
             Abuelitas and nietes (grandkids) can come together to practice their
@@ -50,7 +50,7 @@ const HomeView = () => {
               Let's start learning!
             </button>
           </NavLink>
-        </section>
+        </body>
       </section>
     </section>
   );
