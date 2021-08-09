@@ -92,7 +92,7 @@ class Home extends React.Component {
             <img
               className="loading-image"
               id="loadingImg"
-              alt={"Loading-page-image"}
+              alt={"Loading-page"}
               src={LoadingImage}
             ></img>
           </div>

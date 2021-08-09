@@ -1,18 +1,12 @@
 import React from "react";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 const SavedSentences = (props) => {
+  return <p className="each-sentence">{props.sentence}</p>;
+};
 
-    return (
-            <p className="each-sentence">{props.sentence}</p>
+SavedSentences.propTypes = {
+  sentence: PropTypes.string.isRequired,
+};
 
-    );
-  };
-
-  SavedSentences.propTypes = {
-    sentence: PropTypes.string.isRequired
-  }
-  
-  export default SavedSentences;
-  
+export default SavedSentences;

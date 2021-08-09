@@ -1,11 +1,7 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import "./FormView.css";
-import WordsoftheDay from "../WordsoftheDay/WordoftheDay";
 import { NavLink } from "react-router-dom";
 import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
-import SavedSentences from "../SavedSentences/SavedSentences";
-import SavedWords from "../SavedWords/SavedWords";
 import papelPicado from "../../assets/papelPicado.jpg";
 import banderas from "../../assets/banderas.png";
 
@@ -39,9 +35,7 @@ class FormView extends React.Component {
     } else {
       return null
     }
-    {
-      this.props.handler(newSentence);
-    }
+    {this.props.handler(newSentence);}
   };
 
   saveThisWord = (event) => {
@@ -54,9 +48,7 @@ class FormView extends React.Component {
     } else {
       return null;
     }
-    {
-      this.props.wordHandler(newWord);
-    }
+    {this.props.wordHandler(newWord);}
   };
 
   render() {
