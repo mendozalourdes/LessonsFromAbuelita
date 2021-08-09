@@ -6,11 +6,11 @@ describe("Saved Words & Sentences Page View", () => {
       "GET",
       "https://palabras-aleatorias-public-api.herokuapp.com/random"
     );
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
   });
 
   it("Should get data from the fetch call", () => {
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
     cy.intercept(
       "GET",
       "https://palabras-aleatorias-public-api.herokuapp.com/random",
@@ -65,7 +65,7 @@ describe("Saved Words & Sentences Page View", () => {
     cy.visit("http://localhost:3000/word")
     .location("pathname")
     .should("eq", "/word")
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
     cy.get("#randomWord").contains("yak");
     cy.get("#wordImage");
     cy.get("#formViewBtn").click()
@@ -84,7 +84,7 @@ describe("Saved Words & Sentences Page View", () => {
   });
 
   it("Should show the user a page title", () => {
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
   });
 
   it("Should show the current word", () => {

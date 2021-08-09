@@ -16,7 +16,7 @@ const SingleWord = ({ word, definition, image, newWord }) => {
             src={papelPicado}
           ></img>
           <NavLink to={"/"}>
-            <button className="title-button">Lessons from Abuelita</button>
+          <button id="titleBtn" className="title-button">Lessons from Abuelita</button>
           </NavLink>
         </article>
         <div className="links">

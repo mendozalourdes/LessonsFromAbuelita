@@ -15,7 +15,7 @@ const HomeView = () => {
             src={papelPicado}
           ></img>
           <NavLink to={"/"}>
-            <button className="title-button">Lessons from Abuelita</button>
+            <button id="titleBtn" className="title-button">Lessons from Abuelita</button>
           </NavLink>
         </article>
         <div className="links">
@@ -36,7 +36,7 @@ const HomeView = () => {
       <section className="main-container">
         <section className="main-section">
           <img className="banderas" alt="banderas" src={banderas}></img>
-          <h2 className="welcome-msg">
+          <h2 id="welcomeMsg" className="welcome-msg">
             Welcome to <p className="main-title-chalk">Lessons from Abuelita!</p> This is a place where
             Abuelitas and nietes (grandkids) can come together to practice their
             Spanish together, share their culture, and create a beautiful
