@@ -12,7 +12,6 @@ h2{
     font-size: 3vh;
     width: 100vw;
     height: 55vh;
-    /* opacity: .75; */
 
 }
 
@@ -40,14 +39,6 @@ h2{
     justify-content: center;
 }
 
-/* .main-section{
-    padding: 0;
-    background-color: rgb(81, 228, 88);
-    height: 50vh;
-    width: 50vw;
-    margin-top: 10%;
-    
-} */
 
 .start-learning-btn {
     height: 5vh;
@@ -80,6 +71,10 @@ h2{
     position: relative;
 }
 
+.welcome-msg {
+    margin-top: -60px;
+}
+
 .title-button {
     height: 15vh;
     width: 50vw;
@@ -108,12 +103,6 @@ h2{
 
 .word-button, button, 
 .start-learning-btn {
-    /* height: 5vh;
-    width: 9vw;
-    border: none;
-    background-color: yellow;
-    font-family: "Courier New", Courier, monospace; */
-
     height: 5vh;
     width: 12vw;
     border: none;
@@ -131,26 +120,9 @@ h2{
     transition: transform 125ms;
     transform: translateY(-10px);
     cursor: pointer;
+    background-color: rgb(189, 33, 137);
+    opacity: 1;
   }
-
-  /* .start-learning-btn {
-    height: 5vh;
-    width: 12vw;
-    border: none;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(245, 28, 155);
-    box-shadow: 7px 2px 20px 0px;
-    border-radius: 15px;
-    opacity: .80;
-    border: 5px solid orange;
-    font-weight: 600;
-}
-
-.start-learning-btn:hover, button:hover {
-    transition: transform 125ms;
-    transform: translateY(-10px);
-    cursor: alias;
-} */
 
 
 @import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
@@ -173,7 +145,7 @@ h2{
   font-family: "Walter Turncoat", cursive;
   display: block;
   width: 80%;
-  height: 50%;
+  height: 60%;
   min-height: auto;
   margin: 30px auto 0 auto;
   background-color: #497959;
@@ -211,8 +183,4 @@ h2{
   margin-right: 60px;
   right: 5%;
   box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3)
-}
-
-a {
-  color: #ff0
 }

@@ -7,6 +7,7 @@ import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
 import SavedSentences from "../SavedSentences/SavedSentences";
 import SavedWords from "../SavedWords/SavedWords";
 import papelPicado from "../../assets/papelPicado.jpg";
+import banderas from "../../assets/banderas.png";
 
 
 class FormView extends React.Component {
@@ -85,7 +86,7 @@ class FormView extends React.Component {
                 <p className="word-link">Show Me A Word</p>
               </button>
             </NavLink>
-            <p className="origin-story-link">About Us</p>
+            {/* <p className="origin-story-link">About Us</p> */}
           </div>
         </header>
         <section className="word-container-section">
@@ -128,6 +129,7 @@ class FormView extends React.Component {
           </section>
           <section className="sentence-board-container">
             <div className="sentence-board">
+            <img className="banderas" alt="banderas" src={banderas}></img> 
                 <div>
                   <h1 className="saved-section-heading">
                     Saved Words & Sentences
