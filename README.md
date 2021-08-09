@@ -28,9 +28,9 @@ To solidify and demonstrate the understanding of:
 
 ## How does this work?
 
-![Home Page View]()
-![Word Display View]() 
-![Form and Board View]() 
+![Home Page View](https://user-images.githubusercontent.com/78240633/128754474-26467588-e6db-4df3-9cdf-4b4dd02cea1d.gif)
+![Word Display View](https://user-images.githubusercontent.com/78240633/128754805-5d11c5c6-30f2-47b6-b162-3cacd5472bda.gif) 
+![Form and Board View](https://user-images.githubusercontent.com/78240633/128755114-3f8ca4c2-4096-466e-9ad2-2a6376dcec75.gif) 
 
 
 **[Back to top](#table-of-contents)**
