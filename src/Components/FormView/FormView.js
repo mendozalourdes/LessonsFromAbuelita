@@ -88,8 +88,9 @@ class FormView extends React.Component {
             <p className="origin-story-link">About Us</p>
           </div>
         </header>
-        <section>
-          <h1 id="currentWord">{this.state.word}</h1>
+        <section className="word-container-section">
+        <section className="current-word-section">
+          <p className="current-word" id="currentWord">{this.state.word}</p>
           <p>{this.state.definition}</p>
           <button
             className="save-word-btn"
@@ -99,12 +100,13 @@ class FormView extends React.Component {
             Save This Word
           </button>
         </section>
+        </section>
         <section className="form-container">
           <section className="both-sections">
             <main className="main-form-container">
               <h2 className="instructions">
                 Write your practice sentence here, and send it over to your
-                Abuelita by clicking on the button!
+                Abuelita!
               </h2>
               <textarea
                 id="sentenceInput"

@@ -24,14 +24,10 @@
 
 }
 
-/* .sentence-board{
-    /* border: 5px dotted fuchsia; */
-    /* height: 40vh;
-    width: 40vw;
-    margin-top: 20%;
-    color: white;
-}  */
-
+textarea {
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
 
 
 .each-sentence {
@@ -42,6 +38,10 @@
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 10%;
+    border: 5px solid rgb(245, 28, 155);
+    background-color: orange;
+    padding: 20px;
+    border-radius: 25px;
 }
 
 
@@ -113,4 +113,24 @@
 
 a {
   color: #ff0
+}
+
+.current-word-section {
+    width: 50vw;
+    height: 15vh;
+    border: 10px solid greenyellow;
+    background-color: orange;
+    overflow-y: auto;
+    border-radius: 25px;
+}
+
+.word-container-section {
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+}
+
+.current-word {
+    font-size: 20px;
+    font-weight: 600;
 }
