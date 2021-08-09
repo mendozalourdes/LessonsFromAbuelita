@@ -69,8 +69,6 @@
     -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-
-
 @media only screen and (max-width: 600px) {
   .image-word {
     height: 25vh;

@@ -45,7 +45,6 @@ h2 {
   justify-content: center;
 }
 
-
 .papel-picado {
   overflow: hidden;
   object-fit: cover;
@@ -176,9 +175,8 @@ button:hover,
     -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-
-@media only screen and (max-width: 600px){
-  .title-button{
+@media only screen and (max-width: 600px) {
+  .title-button {
     height: 20vh;
     width: 55vw;
     font-size: 1.5em;
@@ -205,7 +203,7 @@ button:hover,
     height: 70%;
   }
   .papel-picado {
-   width: 95%; 
-   object-fit: cover;
+    width: 95%;
+    object-fit: cover;
   }
 }
