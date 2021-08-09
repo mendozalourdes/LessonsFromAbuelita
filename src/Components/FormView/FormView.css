@@ -52,16 +52,6 @@
     margin-left: 10%;
 }
 
-.title-button {
-    background-color: rgb(245, 28, 155) ;
-    border: none;
-}
-
-.title-button:hover {
-    transition: transform 125ms;
-    transform: translateY(15px);
-    cursor: pointer;
-}
 
 .saved-section-heading { 
     font-size: 2.5em;

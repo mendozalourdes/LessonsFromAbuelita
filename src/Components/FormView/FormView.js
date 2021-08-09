@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
 import SavedSentences from "../SavedSentences/SavedSentences";
 import SavedWords from "../SavedWords/SavedWords";
+import papelPicado from "../../assets/papelPicado.jpg";
+
 
 class FormView extends React.Component {
   constructor({ props }) {
@@ -59,12 +61,15 @@ class FormView extends React.Component {
   render() {
     return (
       <section className="homepage-view">
-        <header className="app-header">
-          <NavLink to={"/"}>
-            <button className="title-button">
-              <h1 className="app-title">Lessons from Abuelita </h1>
-            </button>
-          </NavLink>
+      <header className="app-header">
+        <article className="heading-section-image-text">
+          <img className="papel-picado" alt="papel-picado" src={papelPicado}></img>
+        <NavLink to={"/"}>
+          <button className="title-button">
+            Lessons from Abuelita 
+          </button>
+        </NavLink>
+        </article>
           <div className="links">
             <NavLink to={"/form"}>
             <button className="saved-button"

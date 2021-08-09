@@ -12,7 +12,7 @@ const HomeView = () => {
           <img className="papel-picado" alt="papel-picado" src={papelPicado}></img>
         <NavLink to={"/"}>
           <button className="title-button">
-            <h1 className="app-title">Lessons from Abuelita </h1>
+            Lessons from Abuelita 
           </button>
         </NavLink>
         </article>

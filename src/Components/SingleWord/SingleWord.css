@@ -7,7 +7,7 @@
   background-color: orange;
 }
 
-.word-button {
+/* .word-button {
   height: 5vh;
   width: 9vw;
   border: none;
@@ -19,9 +19,9 @@
   transition: transform 125ms;
   transform: translateY(-10px);
   cursor: pointer;
-}
+} */
 
-.app-header {
+/* .app-header {
   border: 5px yellow dashed;
   background-color: rgb(245, 28, 155);
   font-size: 3vh;
@@ -40,4 +40,4 @@ h2 {
 .title-button {
   background-color: rgb(245, 28, 155);
   border: none;
-}
+} */
