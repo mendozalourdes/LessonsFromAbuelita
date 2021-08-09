@@ -12,7 +12,7 @@ h2{
     font-size: 3vh;
     width: 100vw;
     height: 55vh;
-
+    border-radius: 20px;
 }
 
 .app-title{
@@ -63,7 +63,6 @@ h2{
     margin: 2vw 2vw 2vw -23vw;;
     position: absolute;
     border-radius: 65px;
-    /* opacity: .8; */
 
 }
 
