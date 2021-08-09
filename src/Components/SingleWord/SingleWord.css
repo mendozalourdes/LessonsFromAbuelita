@@ -69,6 +69,15 @@
     -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-a {
-  color: #ff0;
+@media only screen and (max-width: 600px) {
+  .image-word {
+    height: 25vh;
+    width: 50vw;
+  }
+  .single-word-container {
+    font-size: 20px;
+    height: 100vh;
+    width: 70%;
+    height: 70%;
+  }
 }
