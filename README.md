@@ -11,6 +11,8 @@
 ## Overview and Project Goals
 The [goal](https://frontend.turing.edu/projects/module-3/niche-audience.html) of this group project that was made for Mod 3 at [Turing School of Software and Design](https://turing.io/) is to create an application for a niche audience using React, Router, and Cypress. 
 
+[View the application here!](https://lessons-from-abuelita.herokuapp.com/)
+
 ## Why was this project created?
 To solidify and demonstrate the understanding of:
 1. Gaining competency with React fundementals.
