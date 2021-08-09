@@ -17,7 +17,7 @@ const FetchFail = ({errorMsg}) => {
         </NavLink>
       </header>
       <section>
-          <h2>{errorMsg}</h2>
+          <h2 id="errorMsg">{errorMsg}</h2>
                 <img
                     className="error-image"
                     alt={"Error-Image"}

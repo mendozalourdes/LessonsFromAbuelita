@@ -4,12 +4,7 @@ describe("Main Page View", () => {
     cy.get("#loadingImg");
     cy.intercept(
       "GET",
-      "https://palabras-aleatorias-public-api.herokuapp.com/random",
-      {
-        status: 201,
-        body: "word.json",
-      }
-    );
+      "https://palabras-aleatorias-public-api.herokuapp.com/random");
     cy.get("h1").contains("Lessons from Abuelita");
   });
 
@@ -101,4 +96,61 @@ describe("Main Page View", () => {
     cy.get("#formViewBtn");
     cy.get("#getNewWord");
   });
+
+  it("Should show the user an error image if incorrect URL is typed", () => {
+    cy.visit("http://localhost:3000/gimme")
+      .location("pathname")
+  .should("eq", "/gimme")
+  cy.get("h1").contains("Lessons from Abuelita");
+  cy.get('#userErrorImg')
+
+  });
+
+  it("Should show the user an error image there is a 500 error", () => {
+    cy.intercept(
+      "GET",
+      "https://palabras-aleatorias-public-api.herokuapp.com/random", 
+      {
+        statusCode: 500,
+        body: "word.json",
+      }
+      );
+      cy.visit("http://localhost:3000")
+  cy.get("h1").contains("Lessons from Abuelita");
+  cy.get('#errorMsg')
+
+  });
+
+
+
+
 });
+
+
+// it('Should see a message if the fetch fails (500)', () => {
+//   cy.intercept('GET', 'https://api.teleport.org/api/urban_areas/', {
+//     statusCode: 500,
+//     fixture: 'allCities.json'
+//   });
+//   cy.intercept(
+//     'GET',
+//     'https://api.teleport.org/api/urban_areas/slug:aarhus/scores/',
+//     {
+//       statusCode: 500,
+//       fixture: 'aarhus_scores.json'
+//     }
+//   );
+//   cy.intercept(
+//     'GET',
+//     'https://api.teleport.org/api/urban_areas/slug:aarhus/images/',
+//     {
+//       statusCode: 500,
+//       fixture: 'aarhus_images.json'
+//     }
+//   );
+//   cy.visit('http://localhost:3000');
+//   cy.get('h2').should(
+//     'contain',
+//     "So sorry, our servers are down, you'll have to dream another day"
+//   );
+// });

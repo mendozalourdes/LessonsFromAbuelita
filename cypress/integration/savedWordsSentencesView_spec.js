@@ -62,11 +62,15 @@ describe("Saved Words & Sentences Page View", () => {
         },
       }
     );
-    cy.visit("http://localhost:3000/word");
+    cy.visit("http://localhost:3000/word")
+    .location("pathname")
+    .should("eq", "/word")
     cy.get("h1").contains("Lessons from Abuelita");
     cy.get("#randomWord").contains("yak");
     cy.get("#wordImage");
-    cy.get("#formViewBtn").click();
+    cy.get("#formViewBtn").click()
+    .location("pathname")
+    .should("eq", "/form")
     cy.get("textarea");
     cy.get("#currentWord").contains("yak");
   });
@@ -126,5 +130,12 @@ describe("Saved Words & Sentences Page View", () => {
     cy.get("#submitBtn").click();
     cy.get("#oneSentence")
   });
+
+  it("Should allow the user to click on the Show Me A Word button to see the word view", () => {
+    cy.get("#wordBtn").click()
+    .location("pathname")
+    .should("eq", "/word")
+  });
+
 
 });
