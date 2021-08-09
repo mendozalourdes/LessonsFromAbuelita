@@ -126,7 +126,6 @@ class FormView extends React.Component {
           </section>
           <section className="sentence-board-container">
             <div className="sentence-board">
-              <div className="board-border">
                 <div>
                   <h1 className="saved-section-heading">
                     Saved Words & Sentences
@@ -137,7 +136,6 @@ class FormView extends React.Component {
                     )}
                   </h3>
                 </div>
-              </div>
             </div>
           </section>
         </section>
