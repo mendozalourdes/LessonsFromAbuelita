@@ -21,6 +21,7 @@ const Error = ({errorMsg}) => {
                     className="error-image"
                     alt={"User-Error-Image"}
                     src={UserError}
+                    id="userErrorImg"
                   ></img>
       </section>
       <div>

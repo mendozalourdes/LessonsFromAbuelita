@@ -62,11 +62,15 @@ describe("Saved Words & Sentences Page View", () => {
         },
       }
     );
-    cy.visit("http://localhost:3000/word");
+    cy.visit("http://localhost:3000/word")
+    .location("pathname")
+    .should("eq", "/word")
     cy.get("h1").contains("Lessons from Abuelita");
     cy.get("#randomWord").contains("yak");
     cy.get("#wordImage");
-    cy.get("#formViewBtn").click();
+    cy.get("#formViewBtn").click()
+    .location("pathname")
+    .should("eq", "/form")
     cy.get("textarea");
     cy.get("#currentWord").contains("yak");
   });
@@ -104,6 +108,15 @@ describe("Saved Words & Sentences Page View", () => {
     cy.get("p").should("have.class", "each-word");
   });
 
+  it("Should only be able to save the word once and have it displayed on the board once", () => {
+    cy.get("#saveThisWordBtn").click();
+    cy.get("p").should("have.class", "each-word");
+    cy.get("#saveThisWordBtn").click();
+    cy.get("p").should("have.class", "each-word");
+
+  });
+
+
   it("Should display the saved sentence after the user clicks on the Submit Button", () => {
     cy.get("textarea").type("This is a practice sentence.");
     cy.get("#submitBtn").click();
@@ -111,4 +124,18 @@ describe("Saved Words & Sentences Page View", () => {
       .should("have.class", "each-sentence")
       .contains("This is a practice sentence.");
   });
+
+  it("Should not see anything displayed if they submit an empty text area", () => {
+    cy.get("textarea");
+    cy.get("#submitBtn").click();
+    cy.get("#oneSentence")
+  });
+
+  it("Should allow the user to click on the Show Me A Word button to see the word view", () => {
+    cy.get("#wordBtn").click()
+    .location("pathname")
+    .should("eq", "/word")
+  });
+
+
 });

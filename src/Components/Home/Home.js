@@ -49,6 +49,7 @@ class Home extends React.Component {
         if (typeof response === "string") {
           this.setState({ error: response });
         } else {
+          console.log("HomeResponse!", response)
           this.setState({ word: response.body.Word });
           this.setState({ definition: response.body.DefinitionMD });
           this.setState({ image: response.body.urls.image });
@@ -155,7 +156,7 @@ class Home extends React.Component {
               render={() => {
                 return (
                   <>
-                    {!this.state.error.length && (
+                    {!this.state.error.length && this.state.word && (
                       <Error errorMsg="That page does not exist. Go back home?" />
                     )}
                   </>

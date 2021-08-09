@@ -4,11 +4,7 @@ describe("Main Page View", () => {
     cy.get("#loadingImg");
     cy.intercept(
       "GET",
-      "https://palabras-aleatorias-public-api.herokuapp.com/random",
-      {
-        status: 201,
-        body: "word.json",
-      }
+      "https://palabras-aleatorias-public-api.herokuapp.com/random"
     );
     cy.get("h1").contains("Lessons from Abuelita");
   });
@@ -100,5 +96,27 @@ describe("Main Page View", () => {
     cy.get("#wordImage");
     cy.get("#formViewBtn");
     cy.get("#getNewWord");
+  });
+
+  it("Should show the user an error image if incorrect URL is typed", () => {
+    cy.visit("http://localhost:3000/gimme")
+      .location("pathname")
+      .should("eq", "/gimme");
+    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#userErrorImg");
+  });
+
+  it("Should show the user an error image there is a 500 error", () => {
+    cy.intercept(
+      "GET",
+      "https://palabras-aleatorias-public-api.herokuapp.com/random",
+      {
+        statusCode: 500,
+        body: "word.json",
+      }
+    );
+    cy.visit("http://localhost:3000");
+    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#errorMsg");
   });
 });

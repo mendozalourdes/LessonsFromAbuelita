@@ -8,6 +8,7 @@ let apiCalls = {
         } else if (!response.ok) {
           return 'Something went wrong. Please try again later.'
         } else {
+          console.log("response!", response)
           return response.json()
         }
       },
