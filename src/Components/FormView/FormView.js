@@ -124,11 +124,11 @@ class FormView extends React.Component {
                   <h1 className="saved-section-heading">
                     Saved Words & Sentences
                   </h1>
-                  <h3 className="words-and-sentences">
+                  <h2 className="words-and-sentences">
                     {this.state.savedWords && this.state.savedSentences && (
                       <SavedWordsSentences props={this.state} />
                     )}
-                  </h3>
+                  </h2>
                 </div>
             </div>
           </section>
