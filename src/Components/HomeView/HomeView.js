@@ -1,16 +1,21 @@
 import React from "react";
 import "./HomeView.css";
 import { NavLink } from "react-router-dom";
+import papelPicado from "../../assets/papelPicado.jpg";
+
 
 const HomeView = () => {
   return (
     <section className="homepage-view">
       <header className="app-header">
+        <article className="heading-section-image-text">
+          <img className="papel-picado" alt="papel-picado" src={papelPicado}></img>
         <NavLink to={"/"}>
           <button className="title-button">
             <h1 className="app-title">Lessons from Abuelita </h1>
           </button>
         </NavLink>
+        </article>
         <div className="links">
           <NavLink to={"/form"}>
             <button className="saved-button"
