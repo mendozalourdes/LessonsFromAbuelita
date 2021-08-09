@@ -35,7 +35,7 @@ h2{
 
 .main-container{
     background-color: orange;
-    height: 105vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
 }
