@@ -3,7 +3,6 @@ import SavedSentences from "../SavedSentences/SavedSentences";
 import PropTypes from "prop-types";
 
 const SavedWordsSentences = ({ props }) => {
-  console.log("props??", props);
 
   const allSentences = props.savedSentences.map((sentence, index) => {
     return (

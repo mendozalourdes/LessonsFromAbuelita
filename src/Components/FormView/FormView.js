@@ -8,7 +8,7 @@ import banderas from "../../assets/banderas.png";
 
 class FormView extends React.Component {
   constructor({ props }) {
-    super({ props });
+    super();
     this.state = {
       word: props.word,
       sentence: props.sentence,

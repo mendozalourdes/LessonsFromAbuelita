@@ -34,20 +34,20 @@ const HomeView = () => {
       </header>
 
       <section className="main-container">
-        <body className="main-section">
+        <section className="main-section">
           <img className="banderas" alt="banderas" src={banderas}></img>
-          <h3 className="welcome-msg">
-            Welcome to <h2>Lessons from Abuelita!</h2> This is a place where
+          <h2 className="welcome-msg">
+            Welcome to <p className="main-title-chalk">Lessons from Abuelita!</p> This is a place where
             Abuelitas and nietes (grandkids) can come together to practice their
             Spanish together, share their culture, and create a beautiful
             connection that transcends borders and distance.
-          </h3>
+          </h2>
           <NavLink to={"/word"}>
             <button className="start-learning-btn" id="startLearningBtn">
               Let's start learning!
             </button>
           </NavLink>
-        </body>
+        </section>
       </section>
     </section>
   );
