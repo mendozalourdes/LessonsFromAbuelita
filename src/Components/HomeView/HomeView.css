@@ -45,23 +45,10 @@ h2 {
   justify-content: center;
 }
 
-.start-learning-btn {
-  height: 5vh;
-  width: 9vw;
-  border: none;
-  background-color: yellow;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.start-learning-btn:hover {
-  transition: transform 125ms;
-  transform: translateY(-10px);
-  cursor: alias;
-}
 
 .papel-picado {
   overflow: hidden;
-  object-fit: none;
+  object-fit: cover;
   width: 95%;
   height: 45vh;
   margin: 2vw 2vw 2vw -23vw;
@@ -187,4 +174,38 @@ button:hover,
   right: 5%;
   box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.3),
     -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+@media only screen and (max-width: 600px){
+  .title-button{
+    height: 20vh;
+    width: 55vw;
+    font-size: 1.5em;
+    margin-bottom: 5%;
+  }
+  .title-button:hover {
+    height: 20vh;
+    width: 55vw;
+    transition: transform 125ms;
+    transform: translateY(10px);
+    cursor: pointer;
+    background-color: rgb(189, 33, 137);
+    opacity: 1;
+  }
+  .word-button,
+  button,
+  .start-learning-btn {
+    width: 30vw;
+  }
+  .main-section {
+    font-size: 20px;
+    height: 100vh;
+    width: 75%;
+    height: 70%;
+  }
+  .papel-picado {
+   width: 95%; 
+   object-fit: cover;
+  }
 }
