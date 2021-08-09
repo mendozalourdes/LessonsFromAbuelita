@@ -16,7 +16,7 @@ const Error = ({ errorMsg }) => {
             src={papelPicado}
           ></img>
           <NavLink to={"/"}>
-            <button className="title-button">Lessons from Abuelita</button>
+          <button id="titleBtn" className="title-button">Lessons from Abuelita</button>
           </NavLink>
         </article>
       </header>

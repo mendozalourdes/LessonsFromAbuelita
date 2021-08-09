@@ -16,7 +16,7 @@ const FetchFail = ({ errorMsg }) => {
             src={papelPicado}
           ></img>
           <NavLink to={"/"}>
-            <button className="title-button">Lessons from Abuelita</button>
+          <button id="titleBtn" className="title-button">Lessons from Abuelita</button>
           </NavLink>
         </article>
       </header>
@@ -28,7 +28,7 @@ const FetchFail = ({ errorMsg }) => {
             <NavLink to="/">Try Again</NavLink>
           )}
         </div>
-        <img className="error" alt="Error-fetch" src={ServerError}></img>
+        <img id="errorMsg" className="error" alt="Error-fetch" src={ServerError}></img>
       </section>
     </section>
   );

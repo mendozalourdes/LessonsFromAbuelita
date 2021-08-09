@@ -6,15 +6,15 @@ describe("Main Page View", () => {
       "GET",
       "https://palabras-aleatorias-public-api.herokuapp.com/random"
     );
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
   });
 
   it("Should show the user a page title", () => {
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
   });
 
   it("Should get data from the fetch call", () => {
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
     cy.intercept(
       "GET",
       "https://palabras-aleatorias-public-api.herokuapp.com/random",
@@ -67,13 +67,13 @@ describe("Main Page View", () => {
       }
     );
     cy.visit("http://localhost:3000/word");
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
     cy.get("#randomWord").contains("yak");
     cy.get("#wordImage");
   });
 
   it("Should have instructions for the user", () => {
-    cy.get("h3").contains(
+    cy.get("#welcomeMsg").contains(
       "Welcome to Lessons from Abuelita! This is a place where Abuelitas and nietes (grandkids) can come together to practice their Spanish together, share their culture, and create a beautiful connection that transcends borders and distance."
     );
   });
@@ -102,8 +102,8 @@ describe("Main Page View", () => {
     cy.visit("http://localhost:3000/gimme")
       .location("pathname")
       .should("eq", "/gimme");
-    cy.get("h1").contains("Lessons from Abuelita");
-    cy.get("#userErrorImg");
+      cy.get("#titleBtn").contains("Lessons from Abuelita");
+      cy.get("#userErrorImg");
   });
 
   it("Should show the user an error image there is a 500 error", () => {
@@ -116,7 +116,7 @@ describe("Main Page View", () => {
       }
     );
     cy.visit("http://localhost:3000");
-    cy.get("h1").contains("Lessons from Abuelita");
+    cy.get("#titleBtn").contains("Lessons from Abuelita");
     cy.get("#errorMsg");
   });
 });
