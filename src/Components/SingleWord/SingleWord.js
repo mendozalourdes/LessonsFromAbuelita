@@ -30,6 +30,7 @@ const SingleWord = ({ word, definition, image, newWord }) => {
           <p className="origin-story-link">About Us</p>
         </div>
       </header>
+      <section className="whole-word-container">
       <section className="single-word-container">
         <img className="image-word" id="wordImage" alt="image-of-word" src={image} />
         <h1 className="random-word" id="randomWord">{word}</h1>
@@ -46,6 +47,7 @@ const SingleWord = ({ word, definition, image, newWord }) => {
             Get A New Word
           </button>
         </NavLink>
+      </section>
       </section>
     </section>
   );
