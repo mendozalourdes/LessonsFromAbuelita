@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 import SavedWordsSentences from "../SavedWordsSentences/SavedWordsSentences";
 import SavedSentences from "../SavedSentences/SavedSentences";
 import SavedWords from "../SavedWords/SavedWords";
+import papelPicado from "../../assets/papelPicado.jpg";
+import banderas from "../../assets/banderas.png";
+
 
 class FormView extends React.Component {
   constructor({ props }) {
@@ -59,12 +62,15 @@ class FormView extends React.Component {
   render() {
     return (
       <section className="homepage-view">
-        <header className="app-header">
-          <NavLink to={"/"}>
-            <button className="title-button">
-              <h1 className="app-title">Lessons from Abuelita </h1>
-            </button>
-          </NavLink>
+      <header className="app-header">
+        <article className="heading-section-image-text">
+          <img className="papel-picado" alt="papel-picado" src={papelPicado}></img>
+        <NavLink to={"/"}>
+          <button className="title-button">
+            Lessons from Abuelita 
+          </button>
+        </NavLink>
+        </article>
           <div className="links">
             <NavLink to={"/form"}>
             <button className="saved-button"
@@ -80,11 +86,12 @@ class FormView extends React.Component {
                 <p className="word-link">Show Me A Word</p>
               </button>
             </NavLink>
-            <p className="origin-story-link">About Us</p>
+            {/* <p className="origin-story-link">About Us</p> */}
           </div>
         </header>
-        <section>
-          <h1 id="currentWord">{this.state.word}</h1>
+        <section className="word-container-section">
+        <section className="current-word-section">
+          <p className="current-word" id="currentWord">{this.state.word}</p>
           <p>{this.state.definition}</p>
           <button
             className="save-word-btn"
@@ -94,12 +101,13 @@ class FormView extends React.Component {
             Save This Word
           </button>
         </section>
+        </section>
         <section className="form-container">
           <section className="both-sections">
             <main className="main-form-container">
               <h2 className="instructions">
                 Write your practice sentence here, and send it over to your
-                Abuelita by clicking on the button!
+                Abuelita!
               </h2>
               <textarea
                 id="sentenceInput"
@@ -121,7 +129,7 @@ class FormView extends React.Component {
           </section>
           <section className="sentence-board-container">
             <div className="sentence-board">
-              <div className="board-border">
+            <img className="banderas" alt="banderas" src={banderas}></img> 
                 <div>
                   <h1 className="saved-section-heading">
                     Saved Words & Sentences
@@ -132,7 +140,6 @@ class FormView extends React.Component {
                     )}
                   </h3>
                 </div>
-              </div>
             </div>
           </section>
         </section>
